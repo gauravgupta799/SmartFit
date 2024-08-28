@@ -1,0 +1,87 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+
+.hero{
+    position: relative;
+    // background: $clr-primary;
+    height: 100vh;
+   
+    &__inner{
+        position: relative;
+        @include flex-center-vertical;
+        height: 100%;
+    }
+
+    &__subTitle{
+        width: min(100%, 52ch);
+    }
+}
+
+
+// ==============
+// .card-container{
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(rem(270), 1fr));
+//     gap: rem(64) rem(24);
+//     @include breakpoint-xl{
+//         grid-template-columns: repeat(auto-fill, minmax(rem(224), 1fr));
+//         gap: rem(36);
+//     }
+//     @include breakpoint-xxxl{
+//         grid-template-columns: repeat(auto-fill, minmax(rem(312), 1fr));
+//         gap: rem(36);
+//     }
+
+// }
+
+// .card{
+//     display: flex;
+//     flex-direction: column;
+
+//     .card-img{
+//         @media screen  and (max-width: em(992)) {
+//             width: 100%;   
+//         }
+//     }
+// }
+
+
+// .testimonials-card{
+//     background: $clr-tertiary;
+//     padding:em(24) em(16);
+//     @include border-radius(8px);
+
+//     @include breakpoint-sm{
+//         padding:em(24);
+//     }
+
+//     &__header{
+//         @include flex-center-vertical;
+//         gap:rem(16);
+
+//         figure{
+//             @include dimensions(rem(54), rem(54));
+//             @include border-radius(50%);
+//             background: $clr-primary;
+//             flex-shrink: 0;
+//         }
+//     }
+
+//     .testimonials-desc{
+//         font-size: rem(16);
+//         line-height: 1.5;
+//         color:$clr-black;
+//     }
+// }
+
+// .counter{
+//     @include flex-center;
+//     font-size: clamp(rem(28), 4vw + 1rem, rem(52));
+//     line-height: 1.08;
+//     font-family: $ff-primary;
+// }

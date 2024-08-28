@@ -1,0 +1,73 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+// ================================
+.header{
+    // position: fixed; 
+    position: sticky;
+    z-index: 9;
+    top:0;
+    left: 0;
+    width: 100%;
+    background: $clr-white;
+    @include transition(top, 0.5s, ease-out);
+
+    &.hidden{
+        top: rem(-110);
+    }
+
+    &__inner-desktop{
+        position: relative;
+        @include flex-center-vertical;
+        justify-content: space-between;
+        transition: transform 0.25s ease;
+    }
+
+    &__right{
+        @include flex-center-vertical;
+        gap:rem(20);
+        @include breakpoint-xxl{
+            gap:rem(32);
+        }
+
+        display: none;
+        @include breakpoint-lg{
+            display: flex;
+        }
+    }
+
+    &__mobile{
+        @extend .header__inner-desktop;
+        display: flex;
+        padding:em(16);
+        margin-top: 16px;
+        @include breakpoint-lg{
+            display: none;
+        }
+    }
+}
+
+
+.header-desktop.sticky{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.header-desktop{
+    transition:all 0.25s ease;
+    padding-block:em(14);
+}
+
+// ================================
+
+
+// ========== hamburger =============
+.hamburger-wrapper{
+    cursor: pointer;
+    display: flex;
+    @include breakpoint-lg{
+        display: none;
+    }
+}
