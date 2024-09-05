@@ -12,11 +12,11 @@
     top:0;
     left: 0;
     width: 100%;
-    background: $clr-white;
+    background: $clr-primary;
     @include transition(top, 0.5s, ease-out);
 
     &.hidden{
-        top: rem(-110);
+        top: rem(-120);
     }
 
     &__inner-desktop{
@@ -25,20 +25,6 @@
         justify-content: space-between;
         transition: transform 0.25s ease;
     }
-
-    &__right{
-        @include flex-center-vertical;
-        gap:rem(20);
-        @include breakpoint-xxl{
-            gap:rem(32);
-        }
-
-        display: none;
-        @include breakpoint-lg{
-            display: flex;
-        }
-    }
-
     &__mobile{
         @extend .header__inner-desktop;
         display: flex;
@@ -50,6 +36,20 @@
     }
 }
 
+.header-logo{
+    img{
+        height: rem(48);
+        @include breakpoint-sm{
+            height: rem(52);
+        }
+        @include breakpoint-md{
+            height:rem(56);
+        }
+        @include breakpoint-lg{
+            height: auto;
+        }
+    }
+}
 
 .header-desktop.sticky{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
@@ -57,7 +57,13 @@
 
 .header-desktop{
     transition:all 0.25s ease;
-    padding-block:em(14);
+    padding-block:em(16);
+    @include breakpoint-sm{
+        padding-block:em(20);
+    }
+    @include breakpoint-md{
+        padding-block:em(24);
+    }
 }
 
 // ================================

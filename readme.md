@@ -25,4 +25,12 @@ FZ/LH - 18/2
 ff- Saira-Regular
 
 
+echo "# smartfit" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/gauravgupta799/smartfit.git
+git push -u origin master
+
 */

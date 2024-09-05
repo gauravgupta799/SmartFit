@@ -30,6 +30,12 @@ ScrollTrigger.scrollerProxy(document.body, {
 ScrollTrigger.defaults({ scroller: document.body })
 
 
+let isOpened = false;
+function stopLenisScroll(){
+    isOpened = !isOpened;
+    isOpened ? lenis.stop() : lenis.start();
+}
+
 // ====== Toggle Header On Scroll Start =======
 let prevScrollPos = lenis.scroll;
 function toggleHeader() {
@@ -44,34 +50,33 @@ function toggleHeader() {
     prevScrollPos = scrollTop <= 0 ? 0 : scrollTop;;
 }
 // ====== Toggle Header On Scroll End =======
-const mql = window.matchMedia("(min-width: 1200px)");
+// const mql = window.matchMedia("(min-width: 1200px)");
 
-function toggleTopHeader(){
-    const scrollY = lenis.scroll;
-    if(mql.matches){
-        scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
-    }
-    // scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
-}
+// function toggleTopHeader(){
+//     const scrollY = lenis.scroll;
+//     if(mql.matches){
+//         scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
+//     }
+// }
 
-function changeScreen(e){
-    if(e.matches){
-        headerTop.style.display = "block";
-        lenis.on('scroll', () => {
-            e.matches && toggleTopHeader();
-        });     
-    }else{
-        headerTop.style.display = "none";
-    }
-}
+// function changeScreen(e){
+//     if(e.matches){
+//         headerTop.style.display = "block";
+//         lenis.on('scroll', () => {
+//             e.matches && toggleTopHeader();
+//         });     
+//     }else{
+//         headerTop.style.display = "none";
+//     }
+// }
 
-mql.addEventListener("change", changeScreen);
+// mql.addEventListener("change", changeScreen);
 
 //======= Sticky Header End ===========
 
 lenis.on('scroll', (e) => {
     toggleHeader();
-    mql.matches && toggleTopHeader();
+    // mql.matches && toggleTopHeader();
 });
 
 
@@ -82,12 +87,6 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-
-let isOpened = false;
-function stopLenisScroll(){
-    isOpened = !isOpened;
-    isOpened ? lenis.stop() : lenis.start();
-}
 
 // ----=== Loader Start ----=========
 window.onload = function(){
@@ -131,10 +130,6 @@ window.onload = function(){
         y:30,
         delay:-1.25,
     })
-    // .from(".hero-rating", {
-    //     y:50,
-    //     delay:-1.25,
-    // })
     .from(".hero__title", {
         y:50,
         delay:-1.3,
@@ -152,22 +147,6 @@ window.onload = function(){
             delay:-1.4,
         });
     }
-    // .from([".counter-title" , ".counter-subTitle"], {
-    //     y:50,
-    //     duration:1.25,
-    //     delay:-1.45,
-    //     stagger:0.10,
-    //     ease:"power3.out"
-    // })
-    // .from(".ratings-item figure", { 
-    //         opacity:0,
-    //         y:20,
-    //         stagger:0.1,
-    //         delay:-1.45, 
-    //         duration:1.5, 
-    //         ease:"power3.out" 
-    //     }
-    // )
 }
 // ----=== Loader End ----=========
 
@@ -212,47 +191,19 @@ if(hamburgerBtn){
 
 
 // ============ Swipers Start =================
-var galleryTop = new Swiper(".gallery-top", {
-    spaceBetween: 10,
-    grabCursor: true,
-    loop: true,
-    loopedSlides: 4,
+
+var swiper1 = new Swiper(".swiper-testimonials", {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+        prevEl: ".btn--prev",
+        nextEl: ".btn--next",
+     
     },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false
-    }
-  });
-  
-// ========== single property gallery img slider ==========
-var galleryThumbs = new Swiper(".gallery-thumbs", {
-    spaceBetween: 10,
-    centeredSlides: true,
-    touchRatio: 0.4,
-    slideToClickedSlide: true,
-    loop: true,
-    loopedSlides: 4,
-    slidesPerView: 2,
-    grabCursor: true,
-    breakpoints: {
-        576: {
-            slidesPerView: 3,
-        },
-    },
-    keyboard: {
-        enabled: true,
-        onlyInViewport: false
-    }
+    slidesPerView: 1,
 });
-  
-/* set conteoller  */
-if( galleryTop && galleryThumbs){
-    galleryTop.controller.control = galleryThumbs;
-    galleryThumbs.controller.control = galleryTop;
-}
 
 // ============ Swipers End =================
 
@@ -263,7 +214,6 @@ function toggleAccordion(accordions){
         accordion.addEventListener("click", function(){
             this.classList.toggle("active");
             let content = this.nextElementSibling;
-            // console.log(content.querySelector("p"))
             if (content) {
                 content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
                 gsap.from(content.querySelector("p"), 

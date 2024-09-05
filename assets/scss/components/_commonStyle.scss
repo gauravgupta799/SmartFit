@@ -13,13 +13,42 @@
     display: flex;
 }
 
-.section-title{
-    text-transform: capitalize;
-}
 
 .section-header{
-    max-width: 44ch;
+    max-width: 72ch;
     margin-inline:auto;
+    &--about{
+        max-width: 80ch;
+        @include breakpoint-xxl{
+            max-width:91ch;
+        }
+    }
+}
+
+.section-p{
+    max-width: 100%;
+    @include breakpoint-md{
+        max-width: 80%;
+    }
+    @include breakpoint-xxl{
+        max-width: 70%;
+    }
+}
+
+.section-center-div{
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint-sm{
+        gap: rem(16);
+    }
+
+    @include breakpoint-lg{
+        gap: rem(20);
+        flex-wrap: nowrap;
+    }
+    @include breakpoint-xxl{
+        align-items: center;
+    }
 }
 
 .overlay{

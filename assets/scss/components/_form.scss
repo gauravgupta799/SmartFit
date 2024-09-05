@@ -5,22 +5,6 @@
 @use '../abstract/mixins' as *;
 
 
-.form-container{
-    // width: min(100%, 80%);
-    max-width: 100%;
-    margin: 0 auto;
-    @include breakpoint-sm{
-        width: 90%;
-    }
-    @include breakpoint-xxl{
-        width: 80%;
-    }
-}
-
-.form-wrapper{
-    width: min(100%, rem(600));
-}
-
 .form{
     &__group-wrapper{
         @include flex-center-vertical;
@@ -35,7 +19,7 @@
         border:none;
         width: 100%;
         background: $clr-white;
-        color:$clr-blue-light;
+        color:$clr-primary;
         font-family: $ff-secondary;
         caret-color: $clr-primary;
         font-size: rem(16);
@@ -44,8 +28,8 @@
         @include border-radius(4px);
 
         &::placeholder{
-            color:$clr-blue-light;
-            font-style: italic;
+            color:$clr-primary;
+            // font-style: italic;
         }
     }
 
@@ -61,63 +45,48 @@
 
 }
 
-.form-type-container{
-    @include flex-center-vertical;
-    flex-wrap: wrap;
-    gap:rem(10);
 
-    input{
-        display: none;
+.footer-form-wrapper{
+    .form-label{
+        color:$clr-white;
+        font-size: rem(18);
+        line-height: 1.33;
+        text-transform: capitalize;
     }
 
-    label{
-        font-size: rem(14);
-        font-style: italic;
-        padding:em(16) em(12);
-        @include border-radius(4px);
-        border: solid 1px $clr-white;
-        display: inline-block;
-        transition:all 0.3s ease;
-        @include relative-hidden;
-        @include hover-effect();
-        z-index: 1;
-        cursor: pointer;
-
-        @include breakpoint-sm{
+    .form-group{
+        @include flex-center-vertical;
+        border: solid 1px #707070;
+        width: min(100%, rem(507));
+        padding-inline:em(16);
+        height: rem(64);
+        background: $clr-white;
+    }
+    .form__control{
+        padding:0;
+        height: 100%;
+        &::placeholder{
             font-size: rem(16);
-            padding:em(16);
-        }
-        @include breakpoint-xxl{
-            padding:em(16) em(24);
-        }
-
-        &:hover{
-            &::before{
-                transform: translateY(0);
-            }
+            line-height: 1.5;
+            font-family: $ff-secondary;
         }
     }
 }
 
 
-.form-brand-group{
-    @include flex-center-vertical;
-    gap:rem(16);
-}
-
-.custom-select {
-    position: relative;
-    &::after {
-        @include caret-down;
-        transition:transform 0.3s ease;
-        transform:rotate(0deg);
-    }
-    &:focus-within{
-        &::after {
-            transform:rotate(180deg);
-        }
-    }
-}
+// .custom-select {
+//     position: relative;
+//     &::after {
+//         @include caret-down;
+//         transition:transform 0.3s ease;
+//         transform:rotate(0deg);
+//     }
+//     &:focus-within{
+//         &::after {
+//             transform:rotate(180deg);
+//         }
+//     }
+// }
 
 select {
     appearance: none; /* Remove default arrow */
@@ -127,78 +96,78 @@ select {
 }
 
 
-.cta-form-wrapper{
-    .form{
-        &__group{
-            position: relative;
-        }
-        &__control{
-            outline:1px solid $clr-black;
-        }
-        &__label{
-            pointer-events: none;
-            position: absolute;
-            top: 50%;
-            left:rem(8);
-            font-family: $ff-secondary;
-            font-style: italic;
-            font-size: rem(16);
-            line-height: 1.75;
-            color:$clr-black;
-            text-transform: capitalize;
-            padding-left: 1em;
-            margin-bottom: 0;
-            transform: translateY(-50%);
-            transition: all .3s ease;
-            &--textarea{
-                top: 20%;
-            }
-        }
-    }
+// .cta-form-wrapper{
+//     .form{
+//         &__group{
+//             position: relative;
+//         }
+//         &__control{
+//             outline:1px solid $clr-black;
+//         }
+//         &__label{
+//             pointer-events: none;
+//             position: absolute;
+//             top: 50%;
+//             left:rem(8);
+//             font-family: $ff-secondary;
+//             font-style: italic;
+//             font-size: rem(16);
+//             line-height: 1.75;
+//             color:$clr-black;
+//             text-transform: capitalize;
+//             padding-left: 1em;
+//             margin-bottom: 0;
+//             transform: translateY(-50%);
+//             transition: all .3s ease;
+//             &--textarea{
+//                 top: 20%;
+//             }
+//         }
+//     }
 
-    .form__control:focus + label,
-    .form__control:valid + label{
-        top: 0;
-        font-size: rem(15);
-        padding-inline: 10px;
-        background-color:$clr-white;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        line-height: 1.25;
-    }
+//     .form__control:focus + label,
+//     .form__control:valid + label{
+//         top: 0;
+//         font-size: rem(15);
+//         padding-inline: 10px;
+//         background-color:$clr-white;
+//         border-top-left-radius: 4px;
+//         border-top-right-radius: 4px;
+//         line-height: 1.25;
+//     }
     
-    .form__control:focus {
-        outline-color: $clr-primary;
-        + label{
-            color:$clr-primary;
-        }
-    }
-}
+//     .form__control:focus {
+//         outline-color: $clr-primary;
+//         + label{
+//             color:$clr-primary;
+//         }
+//     }
+// }
 
-.cta-link{
-    display:inline-flex;
-    align-items: center;
-    gap:rem(12);
-    font-size: rem(16);
-    line-height: 1;
-    font-style: italic;
-    text-decoration: underline;
-    text-decoration-color: $clr-white;
-    text-underline-offset: 2px;
-    @include link-hover-effect($clr-white, $clr-secondary);
-    svg path{
-        fill: $clr-white;
-        transition:fill 0.3s ease;
-    }
-    &:hover{
-        background-position: 0 0;
-        text-decoration-color: $clr-secondary;
-        svg path{
-            fill: $clr-secondary;
-        }
-    }
-}
+// .cta-link{
+//     display:inline-flex;
+//     align-items: center;
+//     gap:rem(12);
+//     font-size: rem(16);
+//     line-height: 1;
+//     font-style: italic;
+//     text-decoration: underline;
+//     text-decoration-color: $clr-white;
+//     text-underline-offset: 2px;
+//     @include link-hover-effect($clr-white, $clr-secondary);
+//     svg path{
+//         fill: $clr-white;
+//         transition:fill 0.3s ease;
+//     }
+//     &:hover{
+//         background-position: 0 0;
+//         text-decoration-color: $clr-secondary;
+//         svg path{
+//             fill: $clr-secondary;
+//         }
+//     }
+// }
 
-.cta-address {
-    color:$clr-white;
-}
+// .cta-address {
+//     color:$clr-white;
+// }

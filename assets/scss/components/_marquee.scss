@@ -1,0 +1,50 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.marquee-container{
+    background-color: $clr-white;
+}
+.marquee-wrapper{
+    display:flex;
+    padding-block:1.5em;
+    white-space: nowrap;
+    gap: 96px;
+
+    .marquee-list{
+        display: flex; 
+        align-items: center;
+        gap:rem(96);
+        list-style: none; 
+        white-space: nowrap;
+        animation: marquee-list 40s linear infinite;
+    }
+    
+    .marquee-list li {
+        display: flex;
+        align-items: center;
+        gap:rem(48);
+        padding: 0 1.5rem;
+        figure{
+            flex-shrink: 0;
+        }
+
+        .marguee-text{
+            color:$clr-primary;
+        }
+    }
+  }
+  
+
+  /* Keyframes for the marquee animation */
+  @keyframes marquee-list {
+    0% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

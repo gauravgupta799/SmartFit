@@ -38,10 +38,10 @@ function scssTaskMinified(){
 // Array of javaScript files
 const jsFilesArray = [
     "assets/vendors/jquery/jquery-3-6-1.min.js",
-   'assets/vendors/swiper.js_5.3.7/swiper-bundle.min.js', 
     "assets/vendors/gsap/gsap.min.js",
     "assets/vendors/gsap/scrollTrigger-3.6.1.min.js",
     "assets/vendors/lenis/lenis.min.js",
+    'assets/vendors/swiper.js_5.3.7/swiper-bundle.min.js', 
     "assets/js/main.js",
 ];
 

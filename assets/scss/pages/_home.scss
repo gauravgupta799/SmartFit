@@ -5,15 +5,30 @@
 @use "../abstract/mixins" as *;
 
 
+$linear-gradient-clr:rgba(0, 0, 0, 0.25);
 
 .hero{
     position: relative;
-    // background: $clr-primary;
     height: 100vh;
-   
+    @include breakpoint-sm{
+        height: 90vh;
+    }
+
+    &--home{
+        background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
+            url('../assets/images/home-mobile/home-banner.webp');
+        @include background-cover;
+        display: flex;
+        align-items: flex-end;
+
+        @include breakpoint-sm{
+            background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
+                url('../assets/images/home-banner.webp');
+        }
+    }
+  
     &__inner{
         position: relative;
-        @include flex-center-vertical;
         height: 100%;
     }
 
@@ -22,66 +37,174 @@
     }
 }
 
+.cta{
+    &__inner{
+        position: relative;
+    }
+    &__content{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
 
-// ==============
-// .card-container{
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, minmax(rem(270), 1fr));
-//     gap: rem(64) rem(24);
-//     @include breakpoint-xl{
-//         grid-template-columns: repeat(auto-fill, minmax(rem(224), 1fr));
-//         gap: rem(36);
-//     }
-//     @include breakpoint-xxxl{
-//         grid-template-columns: repeat(auto-fill, minmax(rem(312), 1fr));
-//         gap: rem(36);
-//     }
+
+.brands{
+    &__container{
+        position: relative;
+        background: $clr-tertiary;
+        margin-top: -2px;
+        figure{
+            img{
+                margin-inline:auto;
+            }
+        }
+    }
+    &__inner-wrapper{
+        @include flex-center-vertical;
+        justify-content: space-around;
+        figure{
+            flex-shrink: 0;
+        }
+    }
+    &__wrapper-top{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        h5{
+            white-space: nowrap;
+        }
+    }
+}
+
+.about-us{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        @include full-dimensions;
+        opacity: 0.81;
+        background-image: linear-gradient(to bottom, #0000, #000);
+    }
+    &__inner{
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        @include breakpoint-md{
+            top:40%; 
+        }
+        @include breakpoint-xl{
+            top: 60%; 
+        }
+    }
+}
+
+
+.workout-steps{
+   
+    &__container{
+        $full-width:100%;
+        @include breakpoint-xl{
+            max-width:calc($full-width*0.86);
+            margin-inline: auto;
+        }
+        @include breakpoint-xxxl{
+            max-width:calc($full-width*0.84);
+            margin-inline: auto;
+        }
+    }
+
+    &__card{
+        max-width: 22ch;
+        .divider--secondary{
+            width: rem(128) !important;
+            height: rem(7);          
+        }
+    }
+}
+
+.testimonials{
+    &__container{
+        position: relative;
+    }
+    &__wrapper{
+        position: relative;
+    }
+    &__figure{
+        position: relative;
+        width: min(70%, rem(1160));
+    }
+    &__figcaption{
+        transform: translateX(50%);
+        span{
+            font-size: clamp(1.25rem, 6vw + 1rem, 1.75rem);
+            line-height: 3.37;
+            font-family: $ff-primary;
+        }
+    }
+}
+
+.swiper-testimonials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    @include breakpoint-lg{
+        gap:2rem;
+    }
+    @include breakpoint-xl{
+        gap:1rem;
+    }
+    @include breakpoint-xxl{
+        gap:5rem;
+    }
+    @include breakpoint-xxxl{
+        gap:10rem;
+    }
+}
+
+.swiper-wrapper{
+    width: min(70%, rem(1160));
+    margin-inline:auto;
+}
+
+.swiper-button-disabled{
+    opacity: 0.8;
+    background: $clr-secondary;
+    svg path{
+        fill: $clr-white;
+    }
+}
+.swiper-pagination-current,
+.swiper-pagination-total{
+    position: relative;
+    &:before{
+        content:"0";
+        color:$clr-black;
+    }
+}
+
+.swiper-pagination-fraction{
+    position: absolute;
+    top: -47px;
+    left: 80%;
+    z-index: -1;
+}
+
+.swiper-pagination{
+    text-align: left;
+}
+
+// .brand-1{
+//     // width: rem(54);
+// }
+// .brand-2{
 
 // }
+// .brand-3{
 
-// .card{
-//     display: flex;
-//     flex-direction: column;
-
-//     .card-img{
-//         @media screen  and (max-width: em(992)) {
-//             width: 100%;   
-//         }
-//     }
 // }
+// .brand-4{
 
-
-// .testimonials-card{
-//     background: $clr-tertiary;
-//     padding:em(24) em(16);
-//     @include border-radius(8px);
-
-//     @include breakpoint-sm{
-//         padding:em(24);
-//     }
-
-//     &__header{
-//         @include flex-center-vertical;
-//         gap:rem(16);
-
-//         figure{
-//             @include dimensions(rem(54), rem(54));
-//             @include border-radius(50%);
-//             background: $clr-primary;
-//             flex-shrink: 0;
-//         }
-//     }
-
-//     .testimonials-desc{
-//         font-size: rem(16);
-//         line-height: 1.5;
-//         color:$clr-black;
-//     }
-// }
-
-// .counter{
-//     @include flex-center;
-//     font-size: clamp(rem(28), 4vw + 1rem, rem(52));
-//     line-height: 1.08;
-//     font-family: $ff-primary;
 // }

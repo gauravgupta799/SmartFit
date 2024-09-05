@@ -87,11 +87,27 @@
     background: $clr-tertiary;
 }
 
+.bg--quartery{
+    background: $clr-quartery;
+}
+
 .bg--white{
     background:$clr-white;
 }
 
 .mx-auto{
+    margin: 0 auto;
+}
+
+.mx-auto-center{
+    margin: 0 auto;
+    text-align: center;
+}
+.mx-auto-left{
+    margin: 0 auto;
+    text-align: center;
+}
+.mx-auto-right{
     margin: 0 auto;
     text-align: center;
 }
@@ -125,8 +141,8 @@
     &--grey{
         background:$clr-grey; 
     }
-    &--black{
-        height: 2px;
+    &--secondary{
+        background: $clr-secondary;
     }
 }
 
