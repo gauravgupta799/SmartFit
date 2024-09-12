@@ -97,7 +97,7 @@ button{
   border:none;
   outline:none;
   background: none;
-  font-family: $ff-secondary;
+  // font-family: $ff-secondary;
   cursor: pointer;
 }
 
@@ -160,4 +160,12 @@ label{
   color:$clr-primary;
   font-size: rem(16);
   font-family: $ff-primary;
+}
+
+
+img {
+  image-rendering: crisp-edges;  /* for pixelated images */
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -webkit-optimize-contrast; /* Safari */
+  image-rendering: pixelated; /* Modern standard */
 }

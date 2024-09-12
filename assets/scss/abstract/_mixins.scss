@@ -145,3 +145,26 @@
     border-top: 0.35rem solid $clr-black;
     pointer-events: none;
 }
+
+
+@mixin rippel-animation{
+    &::before{
+        content: "";
+        position: absolute;
+        @include full-dimensions;
+        @include border-radius(50%);
+        background-color: inherit;
+        z-index: -1;
+        animation: ripple-play-btn 1.5s ease-out infinite;
+    }
+    @keyframes ripple-play-btn {
+        0% {
+            opacity: 1;
+            transform: scale(0);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1.8);
+        }
+    }
+}

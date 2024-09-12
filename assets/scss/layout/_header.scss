@@ -29,8 +29,8 @@
         @extend .header__inner-desktop;
         display: flex;
         padding:em(16);
-        margin-top: 16px;
-        @include breakpoint-lg{
+        margin-top: rem(16);
+        @include breakpoint-xl{
             display: none;
         }
     }
@@ -73,7 +73,7 @@
 .hamburger-wrapper{
     cursor: pointer;
     display: flex;
-    @include breakpoint-lg{
+    @include breakpoint-xl{
         display: none;
     }
 }

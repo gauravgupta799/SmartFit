@@ -28,24 +28,35 @@
                     margin-left: rem(16); 
                 }
             }
+            .link-last{               
+                margin-left: 0;
+                @media only screen and (min-width:em(488)){
+                    margin-left: rem(10);
+                }
+                @include breakpoint-sm{
+                    margin-left: rem(16); 
+                }
+            }
         }
     }
     &__link{
         position: relative;
         overflow: hidden;
-        font-size: rem(18);
+        font-size: rem(16);
         line-height: 2;
         text-transform: capitalize;
         @include link-hover-effect($clr-white, $clr-secondary);
         font-weight: 600;
+        @include breakpoint-md{
+            font-size: rem(18);
+        }
         address{
             @extend .footer__link;
-            color:$clr-white;
+            // color:$clr-white;
             font-family: $ff-secondary;
             display: inline-flex;
-            line-height: 1.65;
+            line-height: 2;
         }
-
         &:hover{
             background-position: 0 0;
         }
@@ -133,6 +144,18 @@
     @include breakpoint-xl{
         gap:2rem;
     }
+    @include breakpoint-xxxl{
+        gap:1.5rem;
+    }
+    li{
+        white-space: nowrap;
+          &:not(:first-child){
+            &::marker{
+                content: "|";
+                color:$clr-white;
+            }
+        } 
+    }
 
     .info-link{
         position: relative;
@@ -143,25 +166,21 @@
         margin-left: rem(10);
         @include breakpoint-sm{
             margin-left: rem(16); 
-        }
-       
+        }   
         &:hover{
             cursor: pointer;
             background-position: 0 0;
         }
     }
-
-    li{
-      white-space: nowrap;
-        &:not(:first-child){
-            &::marker{
-                content: "|";
-                color:$clr-white;
-            }
-        } 
+    .link-last{               
+        margin-left: 0;
+        @media only screen and (min-width:em(354.99)){
+            margin-left: rem(10);
+        }
+        @include breakpoint-sm{
+            margin-left: rem(16); 
+        }
     }
-
-
 }
 
 .app-stores{

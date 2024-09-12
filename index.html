@@ -30,7 +30,7 @@
                     
                     <!-- Navbar Start -->
                     <nav class="nav">
-                        <ul class="nav__menu list-none" role="navigation">
+                        <ul class="nav__menu  nav__menu--left list-none" role="navigation">
                             <li class="nav__list">
                                 <a href="./index.html" class="nav__link">                                   
                                     <span>Home</span>
@@ -57,7 +57,7 @@
 
                     <!-- Logo-Start -->
                     <div class="header-logo-wrapper">
-                        <a href="./index.html" class="">
+                        <a href="./index.html" class="header__logo">
                             <figure class="header-logo">
                                 <img src="./assets/logos/logo-1.svg" alt="smartfit's logo" class="img-fluid" loading="lazy">
                             </figure>
@@ -66,7 +66,7 @@
                     <!-- Logo-End -->
                           <!-- Navbar Start -->
                     <nav class="nav">
-                        <ul class="nav__menu list-none" role="navigation">
+                        <ul class="nav__menu nav__menu--right list-none" role="navigation">
                             <li class="nav__list">
                                 <a href="./contact.html" class="nav__link" >
                                     <span>Contact</span>
@@ -82,15 +82,12 @@
                                     <span>Blog</span>
                                 </a>
                             </li>                    
-                            <li class="nav__list">
+                            <li class="nav__list header-btn">
                                 <a href="./contact.html" class="btn btn--transparent">
-                                    <span class="nav-btn-text">Schedule Now</span>
-                                    <span class="d-flex mt-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
-                                            <g data-name="Group 2652">
-                                                <path data-name="Rectangle 16" transform="rotate(-90 14 14)" style="fill:#f58022" d="M0 0h28v26H0z"/>
-                                                <path data-name="Icon material-keyboard-arrow-down" d="m10.5 11.76 4.9 4.887 4.9-4.887 1.5 1.5-6.4 6.4L9 13.265z" transform="rotate(-90 13.984 16.113)" fill="#fff"/>
-                                            </g>
+                                    <span class="btn-text--nav">Schedule Now</span>
+                                    <span class="d-flex mt-0 btn-box btn-box--nav">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22" height="22"  >
+                                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#fff"/>
                                         </svg>
                                     </span>
                                 </a>
@@ -161,7 +158,7 @@
                                 </div>
                            
                                 <!-- Services Submenu -->
-                                <ul class="subMenu__list--mobile list-none">`
+                                <ul class="subMenu__list--mobile list-none">
                                     <li class="ml--1">
                                         <a href="./insurance/group-insurance.html" class="subMenu__link">Group Insurance</a>
                                     </li>
@@ -267,22 +264,21 @@
                                     Experience a low-impact workout that stimulates deep muscle layers, enhancing strength and endurance without strain.
                                 </p>
                             </div>
-                            <div class="btn-wrapper mt--2">
-                                <a href="./contact.html" class="btn btn--transparent">
-                                    <span class="">Schedule Now</span>
-                                    <span class="d-flex mt-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
-                                            <g data-name="Group 2652">
-                                                <path data-name="Rectangle 16" transform="rotate(-90 14 14)" style="fill:#f58022" d="M0 0h28v26H0z"/>
-                                                <path data-name="Icon material-keyboard-arrow-down" d="m10.5 11.76 4.9 4.887 4.9-4.887 1.5 1.5-6.4 6.4L9 13.265z" transform="rotate(-90 13.984 16.113)" fill="#fff"/>
-                                            </g>
-                                        </svg>                                     
-                                    </span>
-                                </a>
+                            <div class="btn-wrapper mt--2 ">
+                                <div class="hero-btn">
+                                    <a href="./contact.html" class="btn btn--transparent">
+                                        <span class="">Schedule Now</span>
+                                        <span class="d-flex mt-0 btn-box">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22" height="22"  >
+                                                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#fff"/>
+                                            </svg>
+                                        </span>                                     
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>  
-                    <div class="play-btn-wrapper play-btn-wrapper--banner">
+                    <div class="play-btn-wrapper play-btn-wrapper--banner hero-btn">
                         <button class="play-btn" id="play-btn">
                             <span class="d-flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
@@ -300,7 +296,7 @@
         <section class="training mt--6 mt--sm--8 mt--xl--10">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-lg-10 col-xl-8 col-xxl-7 mx-auto-left">
+                    <div class="col-sm-10 col-lg-10 col-xl-8 col-xxl-7 mx-auto-left">
                         <div class="section-header txt-left">
                             <h2 class="fade-in pr--xl--2 pr--xxl--0">
                                 How EMS Training Works
@@ -313,14 +309,11 @@
                             <div class="btn-wrapper mt--2">
                                 <div class="fade-in-up">
                                     <a href="./about.html" class="btn btn--transparent">
-                                        <span class="">Learn More</span>
-                                        <span class="d-flex mt-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
-                                                <g data-name="Group 2652">
-                                                    <path data-name="Rectangle" transform="rotate(-90 14 14)" fill="#f58022" d="M0 0h28v26H0z" class="path-1"/>
-                                                    <path data-name="Icon" d="m10.5 11.76 4.9 4.887 4.9-4.887 1.5 1.5-6.4 6.4L9 13.265z" transform="rotate(-90 13.984 16.113)" fill="#fff" class="path-2"/>
-                                                </g>
-                                            </svg>                                     
+                                        <span class="btn-text">Learn More</span>
+                                        <span class="d-flex mt-0 btn-box btn-box--primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22" height="22"  >
+                                                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#fff"/>
+                                            </svg>
                                         </span>
                                     </a>
                                 </div>
@@ -329,103 +322,106 @@
                     </div>
                 </div>
             </div>
-            <figure class="mt--5 mt--lg--6">
-                <img 
-                    src="./assets/images/home-mobile/img-1.webp" 
-                    srcset="./assets/images/home-mobile/img-1.webp 576w,
-                            ./assets/images/subtraction-1.webp 992w,
-                            ./assets/images/subtraction-1.webp 1200w" 
-                    sizes= "(max-width: 576px) 576px, 
-                            (max-width: 1200px) 992px, 1200px" 
-                    alt="" class="img-fluid" loading="lazy">
-            </figure>
+            <div class="img-container">
+                <figure class="mt--5 mt--lg--6 overflow-wrapper">
+                    <img 
+                        src="./assets/images/home-mobile/img-1.webp" 
+                        srcset="./assets/images/home-mobile/img-1.webp 576w,
+                                ./assets/images/subtraction-1.webp 992w,
+                                ./assets/images/subtraction-1.webp 1200w" 
+                        sizes= "(max-width: 576px) 576px, 
+                                (max-width: 1200px) 992px, 1200px" 
+                        alt="" class="img-fluid img-reveal" loading="lazy">
+                </figure>
+                
+                <!-- Marquee start -->
+                <div class="marquee-container marquee-container--training">
+                    <div class="page-container">
+                        <div class="marquee-wrapper">
+                            <ul class="marquee-list">
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                            </ul>
+                            <ul class="marquee-list">
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                                <li>
+                                    <figure class="">
+                                        <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
+                                    </figure>
+                                    <h5 class="marguee-text">Better Body: Better Health </h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Marquee end -->
+            </div>
         </section>
         <!-- How Training Works End -->
 
-        <!-- Marquee start -->
-        <div class="marquee-container">
-            <div class="page-container">
-                <div class="marquee-wrapper">
-                    <ul class="marquee-list">
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                    </ul>
-                    <ul class="marquee-list">
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                        <li>
-                            <figure class="">
-                                <img src="./assets/logos/logo-3.svg" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <h5 class="marguee-text">Better Body: Better Health </h5>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Marquee end -->
          
         <!-- 40-minutes section start -->
         <section class="workout bg--tertiary bg-colored py--8 py--md--10 py--xl--12 py--xxl--14">
@@ -436,16 +432,16 @@
                             <div class="section-center-div txt-left">
                                 <h2 class="fade-in">
                                     <span>40</span>
-                                    <span class="mt-0 d-sm-none">Minutes</span>
+                                    <span class="mt-0 d-md-none">Minutes</span>
                                 </h2>
                                 
                                 <div class="overflow-wrapper">
-                                    <p class="mt-2 fade-in-up pr--xl--2 pr--xxl--6 pr--xxxl--8">
+                                    <p class="mt-2 mt-sm-0 fade-in-up pr--xl--2 pr--xxl--6 pr--xxxl--8">
                                         Experience a complete, effective workout that fits into your busy life, delivering real results in just 2 20-minute workout sessions a week.
                                     </p>
                                 </div>
                             </div>
-                            <h2 class="fade-in txt-left d-none d-sm-block">Minutes</h2>
+                            <h2 class="fade-in txt-left d-none d-md-block">Minutes</h2>
                         </div>
                     </div>
                 </div>           
@@ -499,14 +495,14 @@
 
         <!-- About-us section start -->
         <section class="about-us bg-colored">
-            <figure class="fade-in">
+            <figure class="overflow-wrapper img-overlay">
                 <img 
-                src="./assets/images/home-mobile/img-2.webp" 
-                srcset="./assets/images/home-mobile/img-2.webp 576w,
-                        ./assets/images/about-us-sec.webp 992w," 
-                sizes= "(max-width: 576px) 576px, 
-                        (max-width: 1200px) 992px" 
-                alt="" class="img-fluid" loading="lazy" >
+                    src="./assets/images/home-mobile/img-2.webp" 
+                    srcset="./assets/images/home-mobile/img-2.webp 576w,
+                            ./assets/images/about-us-sec.webp 992w," 
+                    sizes= "(max-width: 576px) 576px, 
+                            (max-width: 1200px) 992px" 
+                    alt="" class="img-fluid img-reveal" loading="lazy">
             </figure>
             <div class="about-us__inner">
                 <div class="page-container">
@@ -522,13 +518,18 @@
                         <div class="fade-in-up">
                             <a href="./about.html" class="btn btn--transparent">
                                 <span class="">Learn More</span>
-                                <span class="d-flex mt-0">
+                                <!-- <span class="d-flex mt-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
                                         <g data-name="Group 2652">
                                             <path data-name="Rectangle 16" transform="rotate(-90 14 14)" style="fill:#f58022" d="M0 0h28v26H0z"/>
                                             <path data-name="Icon material-keyboard-arrow-down" d="m10.5 11.76 4.9 4.887 4.9-4.887 1.5 1.5-6.4 6.4L9 13.265z" transform="rotate(-90 13.984 16.113)" fill="#fff"/>
                                         </g>
                                     </svg>                                     
+                                </span> -->
+                                <span class="d-flex mt-0 btn-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22" height="22"  >
+                                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#fff"/>
+                                    </svg>
                                 </span>
                             </a>
                         </div>
@@ -536,18 +537,20 @@
                 </div>
             </div>
         </section>
+        <!-- About-us section End -->
 
-        <div class="brands__container bg-colored py--4">
+        <!-- Brands section start -->
+        <section class="brands__container bg-colored py--4 py--sm--6 fade-in">
             <div class="page-container">
                 <div class="brands__wrapper-top">
                     <div class="divider divider--white"></div>
                     <div class="">
-                        <h5 class="fade-in"><em>As seen in</em></h5>
+                        <h5 class="fade-in-up"><em>As seen in</em></h5>
                     </div>
                     <div class="divider divider--white"></div>
                 </div>
-                <div class="row  mt--3 mt--md--6">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="row  mt--4 mt--sm--6">
+                    <div class="col-sm-6 col-lg-3 d-grid">
                         <div class="brands__content mx-auto-center">
                             <figure class="fade-in">
                                 <img src="./assets/icons/quote-open.svg" alt="" class="img-fluid" loading="lazy">
@@ -566,7 +569,7 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 mt--4 mt-sm-0">
+                    <div class="col-sm-6 col-lg-3 mt--4 mt-sm-0 d-grid">
                         <div class="brands__content mx-auto-center">
                             <figure class="fade-in">
                                 <img src="./assets/icons/quote-open.svg" alt="" class="img-fluid" loading="lazy">
@@ -586,7 +589,7 @@
                         </div>
                         
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 mt--4 mt--sm--6 mt--md--0">
+                    <div class="col-sm-6 col-lg-3 mt--4 mt--sm--6 mt-lg-0 d-grid">
                         <div class="brands__content mx-auto-center">
                             <figure class="fade-in">
                                 <img src="./assets/icons/quote-open.svg" alt="" class="img-fluid" loading="lazy">
@@ -605,7 +608,7 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 mt--4 mt--sm--6 mt-lg-0">
+                    <div class="col-sm-6 col-lg-3 mt--4 mt--sm--6 mt-lg-0 d-grid">
                         <div class="brands__content mx-auto-center">
                             <figure class="fade-in">
                                 <img src="./assets/icons/quote-open.svg" alt="" class="img-fluid" loading="lazy">
@@ -626,9 +629,8 @@
                     </div>
                 </div>                 
             </div>
-        </div>
-        <!-- About-us section End -->
-         
+        </section>
+        <!-- Brands section End -->
 
         <!-- Testimonials section start -->
         <section class="testimonials mt--6 mt--sm--8 mt--md--10 mt--xl--12">
@@ -648,28 +650,38 @@
                     </div>
                 </div>
                 <div class="testimonials__container mt--4">
-                    <!-- <div class="swiper-pagination"></div> -->
+
                     <div class="testimonials__wrapper">
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-pagination fade-in-up"></div>
+
                         <div class="swiper swiper-testimonials">
 
-                            <button class="btn btn--outline btn--prev">
+                            <button class="btn btn--outline btn--prev fade-in-up d-none d-sm-block">
                                 <span class="d-flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="32" height="32">
                                         <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" fill="#f58022"/>
                                     </svg>
                                 </span>
                             </button>
+                            <!-- <div class="testimonials-btn-wrapper">
+                                <div class="line line-first"></div>
+                            </div> -->
 
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="swiper-slide-content">
-                                        <figure class="testimonials__figure">
-                                            <img src="./assets/images/test-1.webp" alt="" class="img-fluid" loading="lazy">
+                                        <figure class="testimonials__figure overflow-wrapper">
+                                            <img 
+                                                src="./assets/images/home-mobile/test-mobile-1.webp" 
+                                                srcset="./assets/images/home-mobile/test-mobile-1.webp 576w,
+                                                        ./assets/images/test-1.webp 992w," 
+                                                sizes= "(max-width: 576px) 576px, 
+                                                        (max-width: 1200px) 992px" 
+                                                alt="" class="img-fluid img-reveal" loading="lazy">
                                             <figcaption class="testimonials__figcaption">
-                                                <span class="fade-in capitalize">John Doe</span>
+                                                <span class="fade-in-up capitalize">John Doe</span>
                                             </figcaption>
-                                            <div class="play-btn-wrapper play-btn-wrapper--testimonials">
+                                            <div class="play-btn-wrapper play-btn-wrapper--testimonials fade-in">
                                                 <button class="play-btn play-btn--testimonials">
                                                     <span class="d-flex">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
@@ -683,13 +695,19 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-slide-content">
-                                        <figure class="testimonials__figure">
-                                            <img src="./assets/images/test-1.webp" alt="" class="img-fluid" loading="lazy">
+                                        <figure class="testimonials__figure overflow-wrapper">
+                                            <img 
+                                                src="./assets/images/home-mobile/test-mobile-1.webp" 
+                                                srcset="./assets/images/home-mobile/test-mobile-1.webp 576w,
+                                                        ./assets/images/test-1.webp 992w," 
+                                                sizes= "(max-width: 576px) 576px, 
+                                                        (max-width: 1200px) 992px" 
+                                                alt="" class="img-fluid img-reveal" loading="lazy">
                                             <figcaption class="testimonials__figcaption">
-                                                <span class="fade-in capitalize">John Doe</span>
+                                                <span class="fade-in-up capitalize">John Doe</span>
                                             </figcaption>
                                             <div class="play-btn-wrapper play-btn-wrapper--testimonials">
-                                                <button class="play-btn play-btn--testimonials">
+                                                <button class="play-btn play-btn--testimonials fade-in">
                                                     <span class="d-flex">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                                                             <path d="M320-200v-560l440 280-440 280Z" fill="#ffffff"/>
@@ -702,13 +720,19 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-slide-content">
-                                        <figure class="testimonials__figure">
-                                            <img src="./assets/images/test-1.webp" alt="" class="img-fluid" loading="lazy">
+                                        <figure class="testimonials__figure overflow-wrapper">
+                                            <img 
+                                                src="./assets/images/home-mobile/test-mobile-1.webp" 
+                                                srcset="./assets/images/home-mobile/test-mobile-1.webp 576w,
+                                                        ./assets/images/test-1.webp 992w," 
+                                                sizes= "(max-width: 576px) 576px, 
+                                                        (max-width: 1200px) 992px" 
+                                                alt="" class="img-fluid img-reveal" loading="lazy">
                                             <figcaption class="testimonials__figcaption">
-                                                <span class="fade-in capitalize">John Doe</span>
+                                                <span class="fade-in-up capitalize">John Doe</span>
                                             </figcaption>
                                             <div class="play-btn-wrapper play-btn-wrapper--testimonials">
-                                                <button class="play-btn play-btn--testimonials">
+                                                <button class="play-btn play-btn--testimonials fade-in">
                                                     <span class="d-flex">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                                                             <path d="M320-200v-560l440 280-440 280Z" fill="#ffffff"/>
@@ -721,13 +745,19 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-slide-content">
-                                        <figure class="testimonials__figure">
-                                            <img src="./assets/images/test-1.webp" alt="" class="img-fluid" loading="lazy">
+                                        <figure class="testimonials__figure overflow-wrapper">
+                                            <img 
+                                                src="./assets/images/home-mobile/test-mobile-1.webp" 
+                                                srcset="./assets/images/home-mobile/test-mobile-1.webp 576w,
+                                                        ./assets/images/test-1.webp 992w," 
+                                                sizes= "(max-width: 576px) 576px, 
+                                                        (max-width: 1200px) 992px" 
+                                                alt="" class="img-fluid img-reveal" loading="lazy">
                                             <figcaption class="testimonials__figcaption">
-                                                <span class="fade-in capitalize">John Doe</span>
+                                                <span class="fade-in-up capitalize">John Doe</span>
                                             </figcaption>
                                             <div class="play-btn-wrapper play-btn-wrapper--testimonials">
-                                                <button class="play-btn play-btn--testimonials">
+                                                <button class="play-btn play-btn--testimonials fade-in">
                                                     <span class="d-flex">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                                                             <path d="M320-200v-560l440 280-440 280Z" fill="#ffffff"/>
@@ -740,13 +770,19 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-slide-content">
-                                        <figure class="testimonials__figure">
-                                            <img src="./assets/images/test-1.webp" alt="" class="img-fluid" loading="lazy">
+                                        <figure class="testimonials__figure overflow-wrapper">
+                                            <img 
+                                                src="./assets/images/home-mobile/test-mobile-1.webp" 
+                                                srcset="./assets/images/home-mobile/test-mobile-1.webp 576w,
+                                                        ./assets/images/test-1.webp 992w," 
+                                                sizes= "(max-width: 576px) 576px, 
+                                                        (max-width: 1200px) 992px" 
+                                                alt="" class="img-fluid img-reveal" loading="lazy">
                                             <figcaption class="testimonials__figcaption">
-                                                <span class="fade-in capitalize">John Doe</span>
+                                                <span class="fade-in-up capitalize">John Doe</span>
                                             </figcaption>
                                             <div class="play-btn-wrapper play-btn-wrapper--testimonials">
-                                                <button class="play-btn play-btn--testimonials">
+                                                <button class="play-btn play-btn--testimonials fade-in">
                                                     <span class="d-flex">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                                                             <path d="M320-200v-560l440 280-440 280Z" fill="#ffffff"/>
@@ -760,7 +796,7 @@
 
                             </div>
 
-                            <button class="btn btn--outline btn--next">
+                            <button class="btn btn--outline btn--next fade-in-up  d-none d-sm-block">
                                 <span class="d-flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="32" height="32" style="transform:rotate(180deg);">
                                         <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" fill="#f58022"/>
@@ -768,8 +804,24 @@
                                 </span>
                             </button>
             
+                            <div class="testimonials__action-btns mt--1 overflow-wrapper">
+                                <button class="btn btn--outline btn--prev fade-in-up">
+                                    <span class="d-flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="32" height="32">
+                                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" fill="#f58022"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <button class="btn btn--outline btn--next fade-in-up">
+                                    <span class="d-flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="32" height="32" style="transform:rotate(180deg);">
+                                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" fill="#f58022"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
-                    
+                
                     </div>
                 
                 </div>
@@ -797,14 +849,14 @@
                     </div>
                 </div>
             </div>
-            <figure class="mt--4 mt--md--5">             
+            <figure class="mt--4 mt--md--5 overflow-wrapper">             
                 <img 
                     src="./assets/images/home-mobile/img-3.webp" 
                     srcset="./assets/images/home-mobile/img-3.webp 576w,
                             ./assets/images/meet-coaches.webp 992w," 
                     sizes= "(max-width: 576px) 576px, 
                             (max-width: 1200px) 992px" 
-                    alt="" class="img-fluid" loading="lazy" >
+                    alt="" class="img-fluid img-reveal" loading="lazy" >
             </figure>
         </section>
         <!-- Meet-Coaches Section End -->
@@ -814,7 +866,7 @@
         <section class="faq mt--6 mt--sm--8 mt--md--10 mt--xl--12">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-sm-8 col-md-5">
+                    <div class="col-sm-9 col-md-10 col-lg-5">
                         <h2 class="fade-in">
                             Frequently asked questions
                         </h2>
@@ -824,13 +876,13 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-md-6 offset-md-1 mt--4 mt-md-0">
+                    <div class="col-sm-12 col-lg-6 offset-lg-1 mt--4 mt-sm--5 mt-lg-0">
                         <div class="accordion__container pt-0">
                             <div class="accordian__content-wrapper">
-                                <div class="accordion__title-wrapper">
-                                    <h5 class="accordion__title fade-in-up">
+                                <div class="accordion__title-wrapper fade-in-up">
+                                    <h5 class="accordion__title">
                                         Will I Sweat During EMS Training?
-                                     </h5>                  
+                                    </h5>                  
                                 </div>
                                 <div class="accordion__content">
                                     <p class="mt--1">
@@ -843,10 +895,10 @@
     
                         <div class="accordion__container">
                             <div class="accordian__content-wrapper">
-                                <div class="accordion__title-wrapper">
-                                    <h5 class="accordion__title fade-in-up">
+                                <div class="accordion__title-wrapper fade-in-up">
+                                    <h5 class="accordion__title">
                                         Will I Be Sore After EMS Training?
-                                     </h5>                  
+                                    </h5>                  
                                 </div>
                                 <div class="accordion__content">
                                     <p class="mt--1">
@@ -859,8 +911,8 @@
     
                         <div class="accordion__container">
                             <div class="accordian__content-wrapper">
-                                <div class="accordion__title-wrapper">
-                                    <h5 class="accordion__title fade-in-up">
+                                <div class="accordion__title-wrapper fade-in-up">
+                                    <h5 class="accordion__title">
                                         What Can I Expect On My First Visit?
                                     </h5>                  
                                 </div>
@@ -875,8 +927,8 @@
     
                         <div class="accordion__container">
                             <div class="accordian__content-wrapper">
-                                <div class="accordion__title-wrapper">
-                                    <h5 class="accordion__title fade-in-up">
+                                <div class="accordion__title-wrapper fade-in-up">
+                                    <h5 class="accordion__title">
                                         Is EMS Training Safe?
                                     </h5>                  
                                 </div>
@@ -891,8 +943,8 @@
     
                         <div class="accordion__container">
                             <div class="accordian__content-wrapper">
-                                <div class="accordion__title-wrapper">
-                                    <h5 class="accordion__title fade-in-up">
+                                <div class="accordion__title-wrapper fade-in-up">
+                                    <h5 class="accordion__title">
                                         How should I dress for EMS training?
                                     </h5>                  
                                 </div>
@@ -911,22 +963,21 @@
 
         
         <!-- CTA Section Start -->
-        <section class="cta bg-colored  mt--5 mt--sm--6 mt--lg--8 mt--xxl--10">
+        <section class="cta bg-colored mt--5 mt--sm--6 mt--lg--10 mt--xxl--10">
             <div class="cta__inner">
-                <figure class="">
+                <figure class="overflow-wrapper img-overlay">
                     <img 
                         src="./assets/images/home-mobile/img-4.webp" 
                         srcset="./assets/images/home-mobile/img-4.webp 576w,
                                 ./assets/images/cta-banner.webp 992w," 
                         sizes= "(max-width: 576px) 576px, 
                                 (max-width: 1200px) 992px" 
-                        alt="" class="img-fluid" loading="lazy">
+                        alt="" class="img-fluid img-reveal" loading="lazy">
                 </figure>
-
                 <div class="page-container">
                     <div class="row">
                         <div class="col-lg-5"></div>
-                        <div class="col-lg-7 cta__content mb--7">
+                        <div class="col-sm-10 col-lg-7 col-xxl-6 cta__content mb--md--4 mb--xl--6 mb--xxl--8 mb--xxxl--10">
                             <div class="section-header">
                                 <h2 class="fade-in">
                                     Start Strong, Finish Stronger
@@ -936,16 +987,21 @@
                                         Your journey to lasting strength begins now. Take the first step and make it count.
                                     </p>
                                 </div>
-                                <div class="btn-wrapper mt--2">
+                                <div class="btn-wrapper mt--2 fade-in-up ">
                                     <a href="./contact.html" class="btn btn--transparent">
                                         <span class="">Schedule Now</span>
-                                        <span class="d-flex mt-0">
+                                        <!-- <span class="d-flex mt-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
                                                 <g data-name="Group 2652">
                                                     <path data-name="Rectangle 16" transform="rotate(-90 14 14)" style="fill:#f58022" d="M0 0h28v26H0z"/>
                                                     <path data-name="Icon material-keyboard-arrow-down" d="m10.5 11.76 4.9 4.887 4.9-4.887 1.5 1.5-6.4 6.4L9 13.265z" transform="rotate(-90 13.984 16.113)" fill="#fff"/>
                                                 </g>
                                             </svg>                                     
+                                        </span> -->
+                                        <span class="d-flex mt-0 btn-box">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22" height="22"  >
+                                                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#fff"/>
+                                            </svg>
                                         </span>
                                     </a>
                                 </div>
@@ -956,11 +1012,11 @@
             </div>
         </section>
         <!-- CTA Section End -->
-
+        
         <!-- Marquee Section Start -->
-        <div class="marquee-container">
+        <section class="marquee-container marquee-container--cta">
             <div class="page-container">
-                <div class="marquee-wrapper">
+                <div class="marquee-wrapper fade-in-up ">
                     <ul class="marquee-list">
                         <li>
                             <figure class="">
@@ -1039,7 +1095,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- Marquee Section End -->
         
     </main>
@@ -1047,15 +1103,17 @@
 
     <!-- Footer Start -->
     <footer class="footer">
-        <div class="footer__top py--4 py--md--6">
+        <div class="footer__top pt--4 pb--2 pb--sm--4 py--md--6">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-5">
+                    <div class="col-md-6 col-lg-4 col-xl-5 col-xxl-6">
                         <div class="row">
-                            <div class="col-6 col-sm-5 col-md-6">
+                            <div class="col-6 col-sm-5 col-md-6 col-xl-4">
                                 <ul class="footer__list list-none overflow-wrapper">
                                     <li class="fade-in-up">
-                                        <a href="./stories.html" class="footer__link ">Stories</a>
+                                        <a href="./stories.html" class="footer__link ">
+                                            <span>Stories</span>
+                                        </a>
                                     </li>
                                     <li class="fade-in-up">
                                         <a href="./ems.html" class="footer__link ">EMS</a>
@@ -1071,7 +1129,7 @@
                                     </li>                         
                                 </ul>
                             </div>
-                            <div class="col-6 col-sm-5 col-md-6">
+                            <div class="col-6 col-sm-5 col-md-6 col-xl-4">
                                 <ul class="footer__list list-none overflow-wrapper">
                                     <li class="fade-in-up">
                                         <a href="./plans.html" class="footer__link">Plans</a>
@@ -1089,65 +1147,52 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1 col-xxl-5 offset-xxl-2 mt--3 mt-md-0">
-                        <div class="row">
-                            <div class="col-12">
-                                <ul class="footer__list-right list-none overflow-wrapper">
-                                    <li class="fade-in-up">
-                                        <a href="" class="footer__link" target="_blank">
-                                           <address class="">Buckhead, GA </address>
-                                        </a>                        
-                                    </li>  
-                                    <li class="fade-in-up">
-                                        <a href="tel:(770) 727-0485 " class="footer__link" target="_blank">(770) 727-0485 </a>
-                                    </li> 
-                                    <li class="fade-in-up">
-                                        <a href="mailto:info@smartfit.fitness" class="footer__link" target="_blank">info@smartfit.fitness </a>
-                                    </li>                                                                                          
-                                </ul>
-                            </div>
-                            <div class="col-12 mt--1 mt-sm-0">
-                                <ul class="footer__list-right list-none overflow-wrapper ">
-                                    <li class="fade-in-up">
-                                        <a href="" class="footer__link" target="_blank">
-                                           <address class="">Buckhead, GA </address>
-                                        </a>                        
-                                    </li>  
-                                    <li class="fade-in-up">
-                                        <a href="tel:(770) 727-0485 " class="footer__link" target="_blank">(770) 727-0485 </a>
-                                    </li> 
-                                    <li class="fade-in-up">
-                                        <a href="mailto:info@smartfit.fitness" class="footer__link" target="_blank">info@smartfit.fitness </a>
-                                    </li>                                                                                          
-                                </ul>
-                            </div>
-                            <div class="col-12 mt--1 mt-md-0">
-                                <div class="footer-form-wrapper mt--3">
-                                    <p class="form-label">Subscribe now!</p>
-                                    <form class="footer-form mt-2">
-                                        <div class="form-group">
-                                            <input type="email" id="email" name="email" class="form__control" 
-                                            placeholder="Enter Email Address" onfocus="placeholder=''" onblur="placeholder='Enter Email Address'" required>
-                                            <button class="d-flex" id="submit-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="42" viewBox="0 0 26 28">
-                                                    <g data-name="Group 2652">
-                                                        <path data-name="Rectangle 16" transform="rotate(-90 14 14)" style="fill:#f58022" d="M0 0h28v26H0z"/>
-                                                        <path data-name="Icon material-keyboard-arrow-down" d="m10.5 11.76 4.9 4.887 4.9-4.887 1.5 1.5-6.4 6.4L9 13.265z" transform="rotate(-90 13.984 16.113)" style="fill:#fff"/>
-                                                    </g>
-                                                </svg>                                        
-                                            </button>
-                                        </div>
-                                    </form>
+                    <div class="col-md-12 col-lg-8 col-xl-6 offset-xl-1 col-xxl-5 offset-xxl-1 mt--3 mt-lg-0">
+                        <ul class="footer__list-right list-none overflow-wrapper justify-content-lg-end">
+                            <li class="fade-in-up">
+                                <a href="#" class="footer__link ml--0" target="_blank">
+                                   <address class="">Buckhead, GA </address>
+                                </a>                        
+                            </li>  
+                            <li class="fade-in-up">
+                                <a href="tel:(770) 727-0485" class="footer__link" target="_blank">(770) 727-0485 </a>
+                            </li> 
+                            <li class="fade-in-up">
+                                <a href="mailto:info@smartfit.fitness" class="footer__link link-last" target="_blank">info@smartfit.fitness </a>
+                            </li>                                                                                          
+                        </ul>
+                        <ul class="footer__list-right list-none overflow-wrapper mt--1 mt-sm-0 justify-content-lg-end">
+                            <li class="fade-in-up">
+                                <a href="#" class="footer__link ml--0" target="_blank">
+                                   <address class="">Buckhead, GA </address>
+                                </a>                        
+                            </li>  
+                            <li class="fade-in-up">
+                                <a href="tel:(770) 727-0485 " class="footer__link" target="_blank">(770) 727-0485 </a>
+                            </li> 
+                            <li class="fade-in-up">
+                                <a href="mailto:info@smartfit.fitness" class="footer__link link-last" target="_blank">info@smartfit.fitness </a>
+                            </li>                                                                                          
+                        </ul>
+                        <div class="footer-form-wrapper overflow-wrapper ml--lg--10 ml--xl--8 ml--xxl--12 ml--xxxl--13">
+                            <form class="footer-form fade-in-up mt--3">
+                                <p class="form-label fade-in-up mb-2">Subscribe now!</p>
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form__control" 
+                                    placeholder="Enter Email Address" onfocus="placeholder=''" onblur="placeholder='Enter Email Address'" required>
+                                    <button class="d-flex submit-btn" id="submit-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22" height="22"  fill="#fff"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                                    </button>
                                 </div>
-                            </div>
-                        </div>                     
+                            </form>
+                        </div>
                     </div>
                     <div class="col-12 d-block d-md-none mt--3">
                         <div class="app-stores">
-                            <figure class="fade-in">
+                            <figure class="fade-in-up">
                                 <img src="./assets/images/google-paly-store.webp" alt="" class="img-fluid" loading="lazy">
                             </figure>
-                            <figure class="fade-in">
+                            <figure class="fade-in-up">
                                 <img src="./assets/images/apple-app-store.webp" alt="" class="img-fluid" loading="lazy">
                             </figure>
                         </div>
@@ -1202,28 +1247,32 @@
                             </li>
                         </ul>
                         <div class="app-stores d-none d-md-flex">
-                            <figure class="fade-in">
-                                <img src="./assets/images/google-paly-store.webp" alt="" class="img-fluid" loading="lazy">
-                            </figure>
-                            <figure class="fade-in">
-                                <img src="./assets/images/apple-app-store.webp" alt="" class="img-fluid" loading="lazy">
-                            </figure>
+                            <a href="#" class="">
+                                <figure class="fade-in-up">
+                                    <img src="./assets/images/google-paly-store.webp" alt="" class="img-fluid" loading="lazy">
+                                </figure>
+                            </a>
+                            <a href="#" class="">
+                                <figure class="fade-in-up">
+                                    <img src="./assets/images/apple-app-store.webp" alt="" class="img-fluid" loading="lazy">
+                                </figure>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-5 offset-xxl-1 mt--2 mt-lg-0 reserved-info-wrapper">
-                        <ul class="info-list list-none ">
-                            <li>
+                        <ul class="info-list list-none overflow-wrapper">
+                            <li class="fade-in-up">
                                 <a href="#" class="info-link ml--0">Privacy Policy</a>
                             </li>
-                            <li>
+                            <li class="fade-in-up">
                                 <a href="#" class="info-link">Site Map</a>
                             </li>
-                            <li>
-                                <a href="#" class="info-link">Terms of use</a>
+                            <li class="fade-in-up">
+                                <a href="#" class="info-link link-last">Terms of use</a>
                             </li>
                         </ul>
-                        <div class="overflow-wrapper mt-2 mt-md-0 mt-xxl-1">
-                            <small class="fade-in-up txt-white mt-0">&copy; 2024 Smart Fit, Inc. All Rights Reserved</small>
+                        <div class="mt-2 mt-md-0 overflow-wrapper">
+                            <small class="fade-in-up txt-white mt-0 fw-600">&copy;2024 Smart Fit, Inc. All Rights Reserved</small>
                         </div>                                          
                     </div>
                 </div>

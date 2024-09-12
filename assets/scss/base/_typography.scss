@@ -26,23 +26,23 @@ $p-font-sizes: (
 
 
 $h1-font-sizes: (
-  null: (rem(52), rem(52)),   
-  sm: (rem(60), rem(60)),
-  md: (rem(68), rem(64)),
-  lg: (rem(76), rem(72)),
-  xl: (rem(84), rem(80)),
-  xxl: (rem(92), rem(88)),
-  xxxl: (rem(112), rem(100)),
+  null: (rem(48), rem(44)),   
+  sm: (rem(56), rem(49)),
+  md: (rem(64), rem(58)),
+  lg: (rem(76), rem(68)),
+  xl: (rem(84), rem(76)),
+  xxl: (rem(92), rem(83)),
+  xxxl: (rem(100), rem(90)),
 );
 
 $h2-font-sizes:(
-  null:(rem(44), rem(48)), 
-  sm:(rem(52), rem(56)),
-  md:(rem(60), rem(64)),
-  lg:(rem(68), rem(72)), 
+  null:(rem(36), rem(33)), 
+  sm:(rem(44), rem(40)),
+  md:(rem(56), rem(49)),
+  lg:(rem(64), rem(58)), 
   xl:(rem(76), rem(68)), 
   xxl:(rem(84), rem(76)),
-  xxxl:(rem(100), rem(90)),
+  xxxl:(rem(92), rem(83)),
 );
 
 $h3-font-sizes: (

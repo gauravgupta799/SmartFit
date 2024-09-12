@@ -17,6 +17,17 @@
         @include breakpoint-xxl{
             gap:rem(48);
         }
+        &--left  {
+            @include breakpoint-xl{
+                gap:rem(64);
+            }
+            @include breakpoint-xxl{
+                gap:rem(80);
+            }
+            @include breakpoint-xxxl{
+                gap:rem(96);
+            }
+        }
     }
 
     &__link{
@@ -29,7 +40,6 @@
         font-family: $ff-primary;
         text-decoration: underline;
         text-decoration-color: $clr-white;
-        -moz-text-decoration-color: $clr-white;
 
         span{
             position: relative;
@@ -53,7 +63,7 @@
 
 .nav, .header__right{
     display: none;
-    @include breakpoint-lg{
+    @include breakpoint-xl{
         display: flex;
     }
 }
@@ -69,7 +79,7 @@
     background: $clr-primary;
     transform:translateX(-100%);
     transition:transform 0.2s ease-out;
-    @include breakpoint-lg{
+    @include breakpoint-xl{
         transform:translateX(-100%) !important;
     }
     &__inner{
@@ -88,7 +98,7 @@
         font-family: $ff-primary;
         display: inline-flex;
         align-items: center;
-        gap:10px;
+        gap:rem(10);
         @include breakpoint-md{
             font-size: rem(32);
         }
@@ -246,12 +256,10 @@
 
 
 .mobile-submenu{
-    display: inline-flex;
-    flex-direction: column;
+    // display: inline-flex;
+    // flex-direction: column;
     &__link-wrapper{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex-space-between;
         cursor: pointer;
     }
     &.active{

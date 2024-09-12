@@ -103,8 +103,8 @@ window.onload = function(){
         loader.style.display = "none"; 
     }
     tl.fromTo(".header",
-        { opacity:0, y:30 },
-        { opacity:1, y:0, }
+        { opacity:0,},
+        { opacity:1,}
     )
 
     tl.from(".header__logo", {
@@ -112,22 +112,12 @@ window.onload = function(){
         delay:-1,
     })
     .from(".nav__link", {
-        y:30,
+        y:20,
         stagger:0.01,
         delay:-1.15,
     })
-    // .fromTo(".action-btn", 
-    //     { opacity:0, y:30 },
-    //     { 
-    //         opacity:1,
-    //         y:0, 
-    //         stagger:0.02, 
-    //         delay:-1.2, 
-    //         duration:1
-    //     }
-    // )
     .from(".header-btn", {
-        y:30,
+        y:20,
         delay:-1.25,
     })
     .from(".hero__title", {
@@ -138,12 +128,12 @@ window.onload = function(){
         y:50,
         delay:-1.35,
     })
-
-    const heroBtn = document.querySelector(".hero-btn");
+    const heroBtn = document.querySelectorAll(".hero-btn");
     if(heroBtn){
         tl.from(heroBtn, {
             y:50,
             duration:1.2,
+            stagger:0.1,
             delay:-1.4,
         });
     }
@@ -174,6 +164,56 @@ mobileNavLinks && mobileNavLinks.forEach((navLink) => {
 //====== Active Page Link End ======
 
 
+
+// ======== Toggle Function for Accordion and Submenu Start ========
+function toggleContent(items, contentSelector) {
+    items.forEach((item) => {
+        item.addEventListener("click", function() {
+            const content = this.querySelector(contentSelector) || this.nextElementSibling;
+            this.classList.toggle("active");
+
+            if(content){
+                content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+                if(content.querySelector("p")){
+                    gsap.fromTo(content.querySelector("p"),
+                        {
+                            opacity: 0,
+                            y: 50,
+                        },
+                        {
+                            opacity: 1,
+                            y: 1,
+                            duration: 1,
+                            ease: "power3.out",
+                        }
+                    );
+                }
+            }
+
+            items.forEach((otherItem) => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
+                    const otherContent = otherItem.querySelector(contentSelector) || otherItem.nextElementSibling;
+                    if (otherContent) otherContent.style.maxHeight = null;
+                }
+            });
+        });
+    });
+}
+
+
+// ---------- Accordion Start --------
+const accordions = document.querySelectorAll(".accordion__title-wrapper");
+accordions && toggleContent(accordions);
+
+// ---------- Mobile SubMenu Start --------
+let mobileSubmenu = document.querySelectorAll(".mobile-submenu");
+mobileSubmenu && toggleContent(mobileSubmenu, '.subMenu__list--mobile');
+
+// ======== Toggle Function for Accordion and Submenu End ========
+
+
+
 //====== Toggle Mobile Menu Start ==========
 function toggleMobileMenu(){
     const mobileMenu = document.querySelector(".mobile-menu");
@@ -189,9 +229,7 @@ if(hamburgerBtn){
 //====== Toggle Mobile Menu End ==========
 
 
-
 // ============ Swipers Start =================
-
 var swiper1 = new Swiper(".swiper-testimonials", {
     pagination: {
       el: ".swiper-pagination",
@@ -204,133 +242,47 @@ var swiper1 = new Swiper(".swiper-testimonials", {
     },
     slidesPerView: 1,
 });
-
 // ============ Swipers End =================
-
-
-// ======== Accordian Toggle Start ========
-function toggleAccordion(accordions){
-    accordions.forEach((accordion)=>{
-        accordion.addEventListener("click", function(){
-            this.classList.toggle("active");
-            let content = this.nextElementSibling;
-            if (content) {
-                content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
-                gsap.from(content.querySelector("p"), 
-                    {
-                        opacity: 0,
-                        y:50,
-                        duration:1,
-                        ease:"power3.out",
-                    }
-                )
-            }
-    
-            accordions.forEach((acdnItem)=>{
-                if(acdnItem !== accordion){
-                    acdnItem.classList.remove("active");
-                    acdnItem.nextElementSibling.style.maxHeight = null;
-                }
-            })
-        });
-    })
-}
-
-const accordions = document.querySelectorAll(".accordion__title-wrapper");
-accordions && toggleAccordion(accordions);
-
-
-// ---------- Mobile SubMenu Start --------
-const mobileSubmenu = document.querySelectorAll(".mobile-submenu");
-mobileSubmenu && mobileSubmenu.forEach((submenu)=>{
-    submenu.addEventListener("click", function(){
-        const menu = submenu.querySelector(".subMenu__list--mobile");
-        submenu.classList.toggle("active");
-        let content = menu;
-        if (content) {
-            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
-        }
-
-        mobileSubmenu.forEach((acdnItem)=>{
-            if(acdnItem !== submenu){
-                acdnItem.classList.remove("active");
-                acdnItem.querySelector(".subMenu__list--mobile").style.maxHeight = null;
-            }
-        })
-    })
-})
-// ---------- Mobile SubMenu End --------
-
-// ======== Accordian Toggle End ========
-
-
-// ============ Custom select box start ============
-// const selectWrapper = document.querySelector('.custom-select-wrapper');
-// const selectTrigger = document.querySelector('.custom-select-trigger');
-// const options = document.querySelectorAll('.custom-option');
-
-// selectTrigger && selectTrigger.addEventListener('click', () => {
-//     selectWrapper && selectWrapper.classList.toggle('open');
-// });
-
-// options && options.forEach(option => {
-//     option.addEventListener('click', () => {
-//         const text = option.textContent;
-//         document.querySelector('.custom-option.selected').classList.remove('selected');
-//         option.classList.add('selected');
-//         selectTrigger.querySelector('span').textContent = text;
-//         selectWrapper.classList.remove('open');
-//     });
-// });
-
-// if(selectWrapper){
-//     document.addEventListener('click', (e) => {
-//         if (!selectWrapper.contains(e.target)) {
-//             selectWrapper && selectWrapper.classList.remove('open');
-//         }
-//     });
-// }
-// ============ Custom select box end ============
 
 
 
 // ========== Counter script start ============
-const counterSections = document.querySelectorAll(".counter-section");
-counterSections && counterSections.forEach((counterSection)=>{
-    const counters = counterSection.querySelectorAll(".count-value");
-    if(counters.length > 0) {
-        let CounterObserver = new IntersectionObserver(
-            (entries, observer)=>{
-                let [entry] = entries;
-                if(!entry.isIntersecting) return;
+// const counterSections = document.querySelectorAll(".counter-section");
+// counterSections && counterSections.forEach((counterSection)=>{
+//     const counters = counterSection.querySelectorAll(".count-value");
+//     if(counters.length > 0) {
+//         let CounterObserver = new IntersectionObserver(
+//             (entries, observer)=>{
+//                 let [entry] = entries;
+//                 if(!entry.isIntersecting) return;
         
-                let speed = 200;
-                counters.forEach((counter, index) => {
-                    const updateCounter = () =>{
-                        let targetNumber = +counter.dataset.target;
-                        let initialNumber = +counter.innerText;
-                        let incPerCount = targetNumber / speed;
-                        if(initialNumber  < targetNumber ){
-                            counter.innerText = Math.ceil(initialNumber + incPerCount);
-                            setTimeout(updateCounter, 40);
-                        }
-                    }
-                    updateCounter();
-                })
-                observer.unobserve(counterSection);
-            },{
-                root:null,
-                threshold:0.4,
-            }
-        );
-        CounterObserver.observe(counterSection);
-    }
-})
+//                 let speed = 200;
+//                 counters.forEach((counter, index) => {
+//                     const updateCounter = () =>{
+//                         let targetNumber = +counter.dataset.target;
+//                         let initialNumber = +counter.innerText;
+//                         let incPerCount = targetNumber / speed;
+//                         if(initialNumber  < targetNumber ){
+//                             counter.innerText = Math.ceil(initialNumber + incPerCount);
+//                             setTimeout(updateCounter, 40);
+//                         }
+//                     }
+//                     updateCounter();
+//                 })
+//                 observer.unobserve(counterSection);
+//             },{
+//                 root:null,
+//                 threshold:0.4,
+//             }
+//         );
+//         CounterObserver.observe(counterSection);
+//     }
+// })
 // ============ Counter script end ============
 
 
 // ========= Animation Starts =========
-//  animation fade in 
+//----- animation fade in ------ 
 const fadeIn = gsap.utils.toArray(".fade-in");
 fadeIn.forEach((mainContent, i) => {
     const anim = gsap.fromTo(mainContent,
@@ -348,7 +300,7 @@ fadeIn.forEach((mainContent, i) => {
     });
 });
 
-// animate fade in up
+//----- animate fade in up ------
 const fadeInUp = gsap.utils.toArray(".fade-in-up");
 fadeInUp.forEach((item, i) => {
     const anim = gsap.fromTo(item,
@@ -367,13 +319,31 @@ fadeInUp.forEach((item, i) => {
 });
 
 
+const imgReveal = gsap.utils.toArray(".img-reveal");
+imgReveal.forEach((item, i) => {
+    const anim = gsap.fromTo(item,
+        { opacity: 0, scale:1.4, rotation:15},
+        { opacity: 1, scale:1, rotation:0, duration: 1.2, }
+    );
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        toggleActions: "play",
+        once: true,
+        duration: 1.2,
+        stagger:0.1,
+        ease: "power3.out"
+    });
+});
 
-// ANimate Dividers
+
+
+// Animate Dividers
 function animateDividers(selector) {
     const dividers = gsap.utils.toArray(selector);
     dividers.forEach((divider) => {
         const anim = gsap.fromTo(divider,
-            { opacity: 0, width:"0%"},
+            { opacity: 0, width:"0"},
             { opacity: 1, width:"100%", duration: 1, ease:"power3.inOut" }
         );
         ScrollTrigger.create({
@@ -390,6 +360,7 @@ function animateDividers(selector) {
 
 // Animate the different dividers
 animateDividers(".divider");
+animateDividers(".divider--secondary");
 
 
 // Navbar Items Animations
