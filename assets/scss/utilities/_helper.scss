@@ -115,7 +115,7 @@
 .list-none{
     list-style: none;
 }
-.pos-relative{
+.relative{
     position: relative;
 }
 
@@ -162,13 +162,12 @@
     position: relative;
     overflow: hidden;
     img{
-        transition:width 0.35s ease-out;
+        transition:transform 0.35s ease-out;
     }
 
     &:hover{
         img{
-            // transform:scale(1.065);
-            width: 105%;
+            transform:scale(1.065);
         }
     }
 }

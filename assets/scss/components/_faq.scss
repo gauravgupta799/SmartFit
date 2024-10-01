@@ -27,7 +27,6 @@
     &__title-wrapper{
         position: relative;
         display: flex;
-        // align-items: center;
         &::after{
             content: url("../assets/icons/arrow-down.svg");
             position: absolute;
@@ -50,9 +49,6 @@
         @include transition(all, 0.25s, ease);
         max-width: 85%;
         @include link-hover-effect($clr-black, $clr-secondary);
-        &:hover{
-            color: $clr-primary;
-        }
     }
     &__icon-wrapper{
         span{
@@ -94,5 +90,20 @@
         .accordion__title{
             background-position: 0 0;
         }
+    }
+}
+
+.faqs-title-wrapper{
+    background-color: $clr-tertiary;
+    padding: em(16) em(24);
+    align-items: center;
+    &::after{
+        right: rem(24);
+    }
+    .accordion__title{
+        @include link-hover-effect($clr-white, $clr-secondary);
+    }
+    & + .accordion__content{
+        padding-left: em(24);
     }
 }

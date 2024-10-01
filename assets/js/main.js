@@ -41,7 +41,7 @@ let prevScrollPos = lenis.scroll;
 function toggleHeader() {
     let scrollTop = lenis.scrollY || document.documentElement.scrollTop;
     if(scrollTop  > prevScrollPos){
-        header.classList.add("sticky");
+        // header.classList.add("sticky");
         scrollingHeader.classList.add("hidden");
     }else{
         scrollTop === 0 ?  header.classList.remove("sticky") : header.classList.add("sticky");
@@ -231,6 +231,7 @@ if(hamburgerBtn){
 
 // ============ Swipers Start =================
 var swiper1 = new Swiper(".swiper-testimonials", {
+    slidesPerView: 1,
     pagination: {
       el: ".swiper-pagination",
       type: "fraction",
@@ -240,8 +241,25 @@ var swiper1 = new Swiper(".swiper-testimonials", {
         nextEl: ".btn--next",
      
     },
-    slidesPerView: 1,
 });
+
+const stayConntected = new Swiper(".stay-connected-swiper", {
+    slidesPerView: 1,
+    loop:true,
+    grabCursor:true,
+    spaceBetween:20,
+    breakpoints:{
+        768:{
+            slidesPerView:3
+        },
+        1024:{
+            slidesPerView:3
+        },
+        1200:{
+            slidesPerView:4
+        }
+    }
+})
 // ============ Swipers End =================
 
 

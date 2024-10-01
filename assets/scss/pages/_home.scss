@@ -22,7 +22,16 @@
         @include breakpoint-lg{
             background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
                 url('../assets/images/home-banner.webp');
+            @include background-cover;
         }
+    }
+    &--about{
+        background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
+        url('../assets/images/about/about-banner.png');
+        @include background-cover;
+        display: flex;
+        align-items: flex-end;
+        height: 80vh;
     }
   
     &__inner{
@@ -102,7 +111,6 @@
 }
 
 .workout-steps{
-   
     &__container{
         $full-width:100%;
         @include breakpoint-xl{
@@ -114,9 +122,25 @@
             margin-inline: auto;
         }
     }
+}
 
-    &__card{
-        max-width: 22ch;
+.steps-card{
+    max-width: 22ch;
+    .divider--secondary{
+        width: rem(128) !important;
+        height: rem(7);          
+    }
+    &--about{
+        max-width: 26ch;
+        @include breakpoint-xxl{
+            max-width: 30ch;
+        }
+    }
+}
+
+.why-smart{
+    &__wrapper{
+        width: min(100%,80rem);
         .divider--secondary{
             width: rem(128) !important;
             height: rem(7);          
@@ -224,4 +248,148 @@
 
 .swiper-pagination{
     text-align: left;
+}
+
+
+
+.packages{
+    &__card{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 3rem;
+        row-gap: 3rem;
+        @include breakpoint-sm{
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1.5rem;
+        }
+        @include breakpoint-lg{
+            column-gap: 2rem;
+        }
+        @include breakpoint-xl{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include breakpoint-xxl{
+            column-gap: 3rem;
+            row-gap: 5rem; 
+        }
+    }
+    .card{
+        background-color:$clr-quartery;
+        border:1px solid $clr-primary;
+        &__header, &__body, &__footer{
+            padding:em(16);
+            @include breakpoint-md{
+                padding:em(16) em(20);
+            }
+            @include breakpoint-lg{
+                padding-inline:em(32);
+            }
+        }
+        &__header{
+            border-bottom: 1px solid $clr-primary;
+            padding-block:em(16);
+            @include breakpoint-md{
+                padding-block:em(20);
+            }
+            @include breakpoint-lg{
+                padding-block:em(28);
+            }
+        }
+        &__footer{
+            background-color: $clr-secondary;
+            .btn--transparent{
+                .btn-text{
+                    @include link-hover-effect($clr-white, $clr-primary);
+                }
+                .btn-box{
+                    background: $clr-white;
+                    path{
+                        fill:$clr-secondary;
+                    }
+                }
+                &:hover{
+                    .btn-text{
+                        background-position: 0 0;
+                        text-decoration-color: $clr-primary;
+                        -moz-text-decoration-color: $clr-primary;
+                    }
+                    .btn-box{
+                        background: $clr-primary;
+                        path{
+                            fill:$clr-white;
+                        }
+                    }
+                }
+            }
+        }
+        &__list {
+            padding-left: em(16);
+            @include breakpoint-md{
+                padding-left: em(18);
+            }
+            @include breakpoint-lg{
+                padding-left: em(20);
+            }
+            li{
+                font-size: rem(14);
+                line-height: 1.5;
+                list-style-type: square;
+                @include breakpoint-md{
+                    font-size: rem(16);
+                }
+                span{
+                    margin-left: rem(6);
+                    @include breakpoint-sm{
+                        margin-left: rem(8);
+                    }
+                    @include breakpoint-md{
+                        margin-left: rem(10);
+                    }
+                }
+                &::marker{
+                    color: $clr-secondary;
+                    font-size: rem(20);
+                }
+            }
+        }
+    }
+}
+
+.faqs-section-header{
+    max-width: 76ch;
+    margin-inline: auto;
+}
+
+.stay-connected-link{
+    display: inherit;
+    font-family: $ff-primary;
+    color:$clr-secondary;
+    font-size: clamp(1.5rem, 4vw + 1rem, 2.5rem);
+    line-height: 1;
+    @include link-hover-effect($clr-secondary, $clr-primary);
+    &:hover{
+        background-position: 0 0;
+        text-decoration: underline;
+        text-decoration-color: $clr-primary;
+        -moz-text-decoration-color: $clr-primary;
+    }
+}
+
+.blogs-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+    @include breakpoint-md{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    @include breakpoint-lg{
+        column-gap: 3rem;
+    }
+    @include breakpoint-xl{
+        row-gap: 5rem;
+    }
+    @include breakpoint-xxl{
+        row-gap: 6rem;
+    }
 }

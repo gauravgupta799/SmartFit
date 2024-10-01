@@ -12,11 +12,12 @@
     top:0;
     left: 0;
     width: 100%;
-    background: $clr-primary;
+    // background: $clr-primary;
+    background: $clr-white;
     @include transition(top, 0.5s, ease-out);
 
     &.hidden{
-        top: rem(-120);
+        top: rem(-136);
     }
 
     &__inner-desktop{
@@ -60,9 +61,6 @@
     padding-block:em(16);
     @include breakpoint-sm{
         padding-block:em(20);
-    }
-    @include breakpoint-md{
-        padding-block:em(24);
     }
 }
 

@@ -45,7 +45,8 @@
             position: relative;
             display: inline-flex;
             margin: 0;
-            @include link-hover-effect($clr-white, $clr-secondary);
+            // @include link-hover-effect($clr-white, $clr-secondary);
+            @include link-hover-effect($clr-black, $clr-secondary);
         }
 
         &.active,
