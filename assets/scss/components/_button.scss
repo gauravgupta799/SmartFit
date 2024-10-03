@@ -83,7 +83,7 @@
     }
     .btn-text{
         &--nav{
-            @include link-hover-effect($clr-secondary, $clr-white);
+            @include link-hover-effect($clr-secondary, $clr-primary);
         }
     }
 
@@ -101,15 +101,16 @@
         }
         .btn-text{
             &--nav{
-                text-decoration-color: $clr-white;
+                text-decoration-color: $clr-primary;
+                -moz-text-decoration-color: $clr-primary;
             }
         }
         .btn-box{
             @include border-radius(50%);
             &--nav{
-                background: $clr-white;
+                background: $clr-primary;
                 svg path{
-                    fill:$clr-secondary;
+                    fill:$clr-white;
                 }
             }
             &--primary{

@@ -5,6 +5,15 @@
 @use '../abstract/mixins' as *;
 
 
+.form-container{
+    width: min(100%, 88%);
+    margin: 0 auto;
+}
+
+.form-wrapper{
+    width: min(100%, rem(600));
+}
+
 .form{
     &__group-wrapper{
         @include flex-center-vertical;
@@ -18,18 +27,17 @@
         outline:none;
         border:none;
         width: 100%;
-        background: $clr-white;
+        background: $clr-quartery;
         color:$clr-primary;
         font-family: $ff-secondary;
         caret-color: $clr-primary;
         font-size: rem(16);
         line-height: 1.75;
-        padding:em(16);
-        @include border-radius(4px);
+        padding:em(12) em(16);
+        // @include border-radius(4px);
 
         &::placeholder{
             color:$clr-primary;
-            // font-style: italic;
         }
     }
 
@@ -45,48 +53,62 @@
 
 }
 
+.form-type-container{
+    @include flex-center-vertical;
+    flex-wrap: wrap;
+    gap:rem(10);
 
-.footer-form-wrapper{
-    .form-label{
-        color:$clr-white;
-        font-size: rem(18);
-        line-height: 1.33;
-        text-transform: capitalize;
+    input{
+        display: none;
     }
 
-    .form-group{
-        @include flex-center-vertical;
-        border: solid 1px #707070;
-        width: min(100%, rem(507));
-        padding-inline:em(16);
-        height: rem(64);
-        background: $clr-white;
-    }
-    .form__control{
-        padding:0;
-        height: 100%;
-        &::placeholder{
+    label{
+        font-size: rem(14);
+        padding:em(16) em(12);
+        // @include border-radius(4px);
+        border: solid 1px $clr-white;
+        display: inline-block;
+        transition:all 0.3s ease;
+        @include relative-hidden;
+        @include hover-effect();
+        z-index: 1;
+        cursor: pointer;
+
+        @include breakpoint-sm{
             font-size: rem(16);
-            line-height: 1.5;
-            font-family: $ff-secondary;
+            padding:em(16);
+        }
+        @include breakpoint-xxl{
+            padding:em(16) em(24);
+        }
+
+        &:hover{
+            &::before{
+                transform: translateY(0);
+            }
         }
     }
 }
 
 
-// .custom-select {
-//     position: relative;
-//     &::after {
-//         @include caret-down;
-//         transition:transform 0.3s ease;
-//         transform:rotate(0deg);
-//     }
-//     &:focus-within{
-//         &::after {
-//             transform:rotate(180deg);
-//         }
-//     }
-// }
+.form-brand-group{
+    @include flex-center-vertical;
+    gap:rem(16);
+}
+
+.custom-select {
+    position: relative;
+    &::after {
+        @include caret-down;
+        transition:transform 0.3s ease;
+        transform:rotate(0deg);
+    }
+    &:focus-within{
+        &::after {
+            transform:rotate(180deg);
+        }
+    }
+}
 
 select {
     appearance: none; /* Remove default arrow */
@@ -96,78 +118,98 @@ select {
 }
 
 
-// .cta-form-wrapper{
-//     .form{
-//         &__group{
-//             position: relative;
-//         }
-//         &__control{
-//             outline:1px solid $clr-black;
-//         }
-//         &__label{
-//             pointer-events: none;
-//             position: absolute;
-//             top: 50%;
-//             left:rem(8);
-//             font-family: $ff-secondary;
-//             font-style: italic;
-//             font-size: rem(16);
-//             line-height: 1.75;
-//             color:$clr-black;
-//             text-transform: capitalize;
-//             padding-left: 1em;
-//             margin-bottom: 0;
-//             transform: translateY(-50%);
-//             transition: all .3s ease;
-//             &--textarea{
-//                 top: 20%;
-//             }
-//         }
-//     }
+.cta-form-wrapper{
+    .form{
+        &__group{
+            position: relative;
+        }
+        &__control{
+            outline:1px solid $clr-black;
+        }
+        &__label{
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            left:rem(8);
+            font-family: $ff-secondary;
+            font-style: italic;
+            font-size: rem(16);
+            line-height: 1.75;
+            color:$clr-black;
+            text-transform: capitalize;
+            padding-left: 1em;
+            margin-bottom: 0;
+            transform: translateY(-50%);
+            transition: all .3s ease;
+            &--textarea{
+                top: 20%;
+            }
+        }
+    }
 
-//     .form__control:focus + label,
-//     .form__control:valid + label{
-//         top: 0;
-//         font-size: rem(15);
-//         padding-inline: 10px;
-//         background-color:$clr-white;
-//         border-top-left-radius: 4px;
-//         border-top-right-radius: 4px;
-//         line-height: 1.25;
-//     }
+    .form__control:focus + label,
+    .form__control:valid + label{
+        top: 0;
+        font-size: rem(15);
+        padding-inline: 10px;
+        background-color:$clr-white;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        line-height: 1.25;
+    }
     
-//     .form__control:focus {
-//         outline-color: $clr-primary;
-//         + label{
-//             color:$clr-primary;
-//         }
-//     }
-// }
+    .form__control:focus {
+        outline-color: $clr-primary;
+        + label{
+            color:$clr-primary;
+        }
+    }
+}
+.cta-wrapper{
+    display: grid;
+    place-items: center;
+}
 
-// .cta-link{
-//     display:inline-flex;
-//     align-items: center;
-//     gap:rem(12);
-//     font-size: rem(16);
-//     line-height: 1;
-//     font-style: italic;
-//     text-decoration: underline;
-//     text-decoration-color: $clr-white;
-//     text-underline-offset: 2px;
-//     @include link-hover-effect($clr-white, $clr-secondary);
-//     svg path{
-//         fill: $clr-white;
-//         transition:fill 0.3s ease;
-//     }
-//     &:hover{
-//         background-position: 0 0;
-//         text-decoration-color: $clr-secondary;
-//         svg path{
-//             fill: $clr-secondary;
-//         }
-//     }
-// }
+.cta-link{
+    display:inline-flex;
+    align-items: center;
+    gap:rem(12);
+    font-size: clamp(1.25rem, 4vw + 1rem, 1.75rem);
+    line-height: 1.28;
+    font-family: $ff-primary;
+    text-transform: uppercase;
+    // font-weight:900;
+    @include link-hover-effect($clr-white, $clr-secondary);
+    svg path{
+        fill: $clr-white;
+        transition:fill 0.3s ease;
+    }
+    @include breakpoint-sm{
+        gap:rem(18);
+    }
+    @include breakpoint-md{
+        gap:rem(24);
+    }
+    @include breakpoint-xl{
+        gap:rem(28);
+    }
+    @include breakpoint-xxl{
+        gap:rem(36);
+    }
 
-// .cta-address {
-//     color:$clr-white;
-// }
+    &:hover{
+        background-position: 0 0;
+        svg path{
+            fill: $clr-secondary;
+        }
+    }
+}
+
+.cta-address {
+    color:$clr-white;
+}
+
+.form-label{
+    color:$clr-white;
+    text-transform: capitalize;
+}
