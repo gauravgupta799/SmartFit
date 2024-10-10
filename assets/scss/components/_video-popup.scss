@@ -52,18 +52,18 @@
     }
     &::before{
         content:"";
-        @include center-div;
-        border-radius: 50%;
+        @include center-through-position;
+        @include border-radius(50%);
         z-index: -1;
-        border:20px solid $clr-section-bg;
+        border:20px solid $clr-primary;
         border-top-color:$clr-primary;
-        box-shadow: 0 0 0 1px $clr-section-bg;
+        box-shadow: 0 0 0 1px $clr-primary;
         animation:borderloader infinite 0.8s linear;
         @keyframes borderloader{
-            0%{border-color:$clr-section-bg; border-top-color:$clr-primary; }
-            25%{border-color:$clr-section-bg; border-right-color:$clr-primary; }
-            50%{border-color:$clr-section-bg; border-bottom-color:$clr-primary; }
-            75%{border-color:$clr-section-bg; border-left-color:$clr-primary; }
+            0%{border-color:$clr-primary; border-top-color:$clr-primary; }
+            25%{border-color:$clr-primary; border-right-color:$clr-primary; }
+            50%{border-color:$clr-primary; border-bottom-color:$clr-primary; }
+            75%{border-color:$clr-primary; border-left-color:$clr-primary; }
         }
     }
 
@@ -71,8 +71,8 @@
 
 .video__popup-close{
     position:absolute;
-    top:-15px;
-    right:-15px;
+    top:rem(-15);
+    right:rem(-15);
     @include dimensions(rem(30), rem(30));
     @include border-radius(50%);
     @include flex-center;

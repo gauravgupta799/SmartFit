@@ -7,6 +7,9 @@
 
 .hero{
     position: relative;
+    // @include background-cover;
+    display: flex;
+    align-items: flex-end;
     height: 100vh;
     @include breakpoint-lg{
         height: 90vh;
@@ -16,8 +19,6 @@
         background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
             url('../assets/images/home-mobile/home-banner.webp');
         @include background-cover;
-        display: flex;
-        align-items: flex-end;
 
         @include breakpoint-lg{
             background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
@@ -29,8 +30,18 @@
         background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
         url('../assets/images/about/about-banner.png');
         @include background-cover;
-        display: flex;
-        align-items: flex-end;
+        height: 80vh;
+    }
+    &--ems{
+        background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
+        url('../assets/images/ems/banner.png');
+        @include background-cover;
+        height: 80vh;
+    }
+    &--packages{
+        background: linear-gradient($linear-gradient-clr, $linear-gradient-clr), 
+        url('../assets/images/packages-banner.png');
+        @include background-cover;
         height: 80vh;
     }
   
@@ -43,22 +54,6 @@
         width: min(100%, 52ch);
     }
 }
-
-.cta{
-    &__inner{
-        position: relative;
-    }
-    &__content{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        margin-bottom: rem(64);
-        @include breakpoint-sm{
-            margin-bottom: rem(80);
-        }
-    }
-}
-
 
 .brands{
     &__container{
@@ -90,18 +85,27 @@
 
 .about-us{
     position: relative;
+    background-image: url("../assets/images/about-sec-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    @include breakpoint-sm{
+        height: 80vh;
+    }
+    @include breakpoint-lg{
+        height: 100vh;
+    }
+    &--ems {
+        background-image: url("../assets/images/ems/img-3.png");
+    }
     &__inner{
         position: absolute;
-        top: 50%;
         width: 100%;
-        @include breakpoint-sm{
-            top:60%; 
-        }
+        bottom: 0;
+        margin-bottom: 3rem;
         @include breakpoint-md{
-            top:40%; 
-        }
-        @include breakpoint-xl{
-            top: 60%; 
+            margin-bottom: 5rem;
         }
     }
 }
@@ -131,10 +135,59 @@
         height: rem(7);          
     }
     &--about{
-        max-width: 26ch;
+        max-width: 28ch;
         @include breakpoint-xxl{
-            max-width: 30ch;
+            max-width: 38ch;
         }
+    }
+}
+
+.cta{
+    background-image: url("../assets/images/cta-banner.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    @include breakpoint-sm{
+        height: 80vh;
+    }
+    @include breakpoint-lg{
+        height: 100vh;
+    }
+    &__inner{
+        position: relative;
+    }
+    &__content{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-bottom: rem(160);
+        @include breakpoint-lg{
+            margin-bottom: rem(200);
+        }
+        @include breakpoint-xxl{
+            margin-bottom: rem(232);
+        }
+    }
+}
+
+.cta-list{
+    .divider--secondary{
+        width: rem(128) !important;
+        height: rem(7);  
+        margin-left: 10%;
+        @include breakpoint-sm{
+            margin-left: 12%;
+        }        
+        @include breakpoint-md{
+            margin-left: 15%;
+        }        
+        @include breakpoint-xl{
+            margin-left: 16%;
+        }        
+        @include breakpoint-xxl{
+            margin-left: 18%;
+        }        
     }
 }
 
@@ -195,61 +248,20 @@
     }
 }
 
-.swiper-testimonials{
-    @include breakpoint-sm{
-        @include flex-center;
-    }
-    @include breakpoint-lg{
-        gap:1rem;
-    }
-    @include breakpoint-xxl{
-        gap:5rem;
-    }
-    @include breakpoint-xxxl{
-        gap:10rem;
-    }
-}
-
-.swiper-wrapper{
-    width: min(100%, rem(1160));
-    margin-inline:auto;
-    @include breakpoint-sm{
-        width: min(75%, rem(1160));
-    }
-    @include breakpoint-lg{
-        width: min(70%, rem(1160));
+.map-area {
+    &__iframe{
+        height: rem(400);
+        @include breakpoint-sm{
+            height: rem(450);
+        }
+        @include breakpoint-md{
+            height: rem(500);
+        }
+        @include breakpoint-lg{
+            height: rem(576);
+        }
     }
 }
-
-.swiper-button-disabled{
-    opacity: 0.8;
-    background: $clr-secondary;
-    border-color:$clr-secondary;
-    svg path{
-        fill: $clr-white;
-    }
-}
-
-.swiper-pagination-current,
-.swiper-pagination-total{
-    position: relative;
-    &:before{
-        content:"0";
-        color:$clr-black;
-    }
-}
-
-.swiper-pagination-fraction{
-    position: absolute;
-    top: -47px;
-    left: 80%;
-    z-index: -1;
-}
-
-.swiper-pagination{
-    text-align: left;
-}
-
 
 
 .packages{
@@ -257,7 +269,7 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         column-gap: 3rem;
-        row-gap: 3rem;
+        row-gap: 4rem;
         @include breakpoint-sm{
             grid-template-columns: repeat(2, 1fr);
             column-gap: 1.5rem;
@@ -274,6 +286,9 @@
         }
     }
     .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         background-color:$clr-quartery;
         border:1px solid $clr-primary;
         &__header, &__body, &__footer{
@@ -291,9 +306,10 @@
             @include breakpoint-md{
                 padding-block:em(20);
             }
-            @include breakpoint-lg{
-                padding-block:em(28);
-            }
+        }
+        &__body{
+            flex: 1;
+            padding-block: em(32);
         }
         &__footer{
             background-color: $clr-secondary;
@@ -334,18 +350,19 @@
                 font-size: rem(14);
                 line-height: 1.5;
                 list-style-type: square;
+                list-style-position: outside;
                 @include breakpoint-md{
                     font-size: rem(16);
                 }
-                span{
-                    margin-left: rem(6);
-                    @include breakpoint-sm{
-                        margin-left: rem(8);
-                    }
-                    @include breakpoint-md{
-                        margin-left: rem(10);
-                    }
-                }
+                // span{
+                //     margin-left: rem(6);
+                //     @include breakpoint-sm{
+                //         margin-left: rem(8);
+                //     }
+                //     @include breakpoint-md{
+                //         margin-left: rem(10);
+                //     }
+                // }
                 &::marker{
                     color: $clr-secondary;
                     font-size: rem(20);
@@ -355,10 +372,6 @@
     }
 }
 
-.faqs-section-header{
-    max-width: 76ch;
-    margin-inline: auto;
-}
 
 .stay-connected-link{
     display: inherit;
@@ -392,4 +405,50 @@
     @include breakpoint-xxl{
         row-gap: 6rem;
     }
+}
+
+
+.process-container{
+    position: relative;
+    z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80%;
+        height: 1px;
+        background: $clr-primary;
+        margin-top: 3rem;
+        z-index: -1;
+        display: none;
+        @include breakpoint-xl{
+            display: block;
+        }
+    }
+}
+
+
+.step-number{
+    position: relative;
+    @include dimensions(rem(72), rem(72));
+    background-color: $clr-tertiary;
+    @include flex-center;
+    @include border-radius(50%);
+    @include breakpoint-sm{
+        @include dimensions(rem(84), rem(84)); 
+    }
+    @include breakpoint-md{
+        @include dimensions(rem(94), rem(94)); 
+    }
+    &__text{
+        font-size: clamp(1.5rem, 4vw + 1rem, 3.5rem);
+        font-family: $ff-primary;
+        color:$clr-white;
+    }
+}
+
+.date-text{
+    font-size: rem(16);
+    font-weight: 700;
 }

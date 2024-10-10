@@ -3,7 +3,6 @@ const body = document.querySelector(".body");
 const header = document.querySelector(".header-desktop");
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const scrollingHeader = document.querySelector(".header");
-const headerTop = document.querySelector(".header-top");
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -41,7 +40,6 @@ let prevScrollPos = lenis.scroll;
 function toggleHeader() {
     let scrollTop = lenis.scrollY || document.documentElement.scrollTop;
     if(scrollTop  > prevScrollPos){
-        // header.classList.add("sticky");
         scrollingHeader.classList.add("hidden");
     }else{
         scrollTop === 0 ?  header.classList.remove("sticky") : header.classList.add("sticky");
@@ -49,34 +47,10 @@ function toggleHeader() {
     }
     prevScrollPos = scrollTop <= 0 ? 0 : scrollTop;;
 }
-// ====== Toggle Header On Scroll End =======
-// const mql = window.matchMedia("(min-width: 1200px)");
-
-// function toggleTopHeader(){
-//     const scrollY = lenis.scroll;
-//     if(mql.matches){
-//         scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
-//     }
-// }
-
-// function changeScreen(e){
-//     if(e.matches){
-//         headerTop.style.display = "block";
-//         lenis.on('scroll', () => {
-//             e.matches && toggleTopHeader();
-//         });     
-//     }else{
-//         headerTop.style.display = "none";
-//     }
-// }
-
-// mql.addEventListener("change", changeScreen);
-
 //======= Sticky Header End ===========
 
 lenis.on('scroll', (e) => {
     toggleHeader();
-    // mql.matches && toggleTopHeader();
 });
 
 
@@ -298,6 +272,36 @@ const stayConntected = new Swiper(".stay-connected-swiper", {
 // })
 // ============ Counter script end ============
 
+//========== Video Play /Pause Button Start ============
+const playBtns = document.querySelectorAll(".play-btn-wrapper");
+if(playBtns){
+  const videoContainer = document.querySelector(".video__popup-container");
+  const closeBtn = document.querySelector(".video__popup-close");
+  let iframe = document.querySelector(".video__popup-iframe-container > iframe");
+
+  function togglePopup() {
+    videoContainer.classList.toggle("show");
+    gsap.fromTo(".video__popup-wrapper", 0.5,
+      { opacity:0, y:50},
+      { opacity:1, y:0, ease:Power4.easeOut }
+    );
+    stopLenisScroll();
+  }
+
+  playBtns.forEach((playBtn, index) => {
+    playBtn.addEventListener("click",() => {
+      const videoId = playBtn.dataset.id;
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      togglePopup();
+    })
+  });
+
+  closeBtn && closeBtn.addEventListener("click", ()=>{
+    iframe.src = "";
+    togglePopup();
+  });
+}
+//========== Video Play /Pause Button End ============
 
 // ========= Animation Starts =========
 //----- animation fade in ------ 
@@ -418,7 +422,7 @@ menuHamburgerBtn.onclick = function(){
         )
     });
 
-    gsap.fromTo(".caret-down-icon",
+    gsap.fromTo(".dropdown-icon",
         {
             opacity:0,
             y:100,
@@ -472,7 +476,7 @@ menuHamburgerBtn.onclick = function(){
 }
 
 closeMenuBtn.onclick = function(){
-    gsap.fromTo(".caret-down-icon",
+    gsap.fromTo(".dropdown-icon",
         {
             opacity:1,
             y:0,

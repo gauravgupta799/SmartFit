@@ -53,15 +53,12 @@
 }
 
 .header-desktop.sticky{
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 2px 5px $linear-gradient-clr;
 }
 
 .header-desktop{
     transition:all 0.25s ease;
-    padding-block:em(16);
-    @include breakpoint-sm{
-        padding-block:em(20);
-    }
+    padding-block:em(10);
 }
 
 // ================================

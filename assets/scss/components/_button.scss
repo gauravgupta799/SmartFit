@@ -24,6 +24,7 @@
         color:$clr-white;
         text-decoration: underline;
         text-decoration-color: $clr-secondary;
+        text-underline-offset: 3px;
     }
     &:hover{
         cursor: pointer;
@@ -32,15 +33,15 @@
 }
 
 
-.btn--primary{
-    background: $clr-secondary;
-    @include flex-center;
-    gap:rem(16);
+// .btn--primary{
+//     background: $clr-secondary;
+//     @include flex-center;
+//     gap:rem(16);
 
-    &::before{
-        background: $clr-primary;
-    }
-}
+//     &::before{
+//         background: $clr-primary;
+//     }
+// }
 
 
 .btn--outline{
@@ -106,7 +107,8 @@
             }
         }
         .btn-box{
-            @include border-radius(50%);
+            // @include border-radius(50%);
+            transform:translateX(-4px);
             &--nav{
                 background: $clr-primary;
                 svg path{
@@ -139,7 +141,8 @@
                 text-decoration-color:$clr-secondary;
             }
             .btn-box{
-                @include border-radius(50%);
+                // @include border-radius(50%);
+                transform:translateX(-4px);
             }
         }
     }

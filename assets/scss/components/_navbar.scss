@@ -38,20 +38,19 @@
         line-height: 1.8;
         text-transform: uppercase;
         font-family: $ff-primary;
-        text-decoration: underline;
-        text-decoration-color: $clr-white;
-
+        // text-decoration: underline;
+        // text-decoration-color: $clr-primary;
+        // -moz-text-decoration-color: $clr-primary;
         span{
             position: relative;
             display: inline-flex;
             margin: 0;
-            // @include link-hover-effect($clr-white, $clr-secondary);
             @include link-hover-effect($clr-black, $clr-secondary);
         }
 
         &.active,
         &:hover{
-            text-decoration-color: $clr-secondary;
+            // text-decoration-color: $clr-secondary;
             span{
                 background-position: 0 0;
             }
@@ -257,8 +256,6 @@
 
 
 .mobile-submenu{
-    // display: inline-flex;
-    // flex-direction: column;
     &__link-wrapper{
         @include flex-space-between;
         cursor: pointer;

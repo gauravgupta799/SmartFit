@@ -95,6 +95,12 @@
     background:$clr-white;
 }
 
+.bg-cover{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
 .mx-auto{
     margin: 0 auto;
 }
@@ -115,6 +121,15 @@
 .list-none{
     list-style: none;
 }
+
+.list-pos-inside{
+    list-style-position: inside;
+}
+
+.list-pos-outside{
+    list-style-position:outside;
+}
+
 .relative{
     position: relative;
 }
@@ -163,11 +178,16 @@
     overflow: hidden;
     img{
         transition:transform 0.35s ease-out;
+        backface-visibility: hidden;
+        will-change: transform;
+        transform: translateZ(0);
+        object-fit: cover;
+        -webkit-backface-visibility: hidden;
     }
 
     &:hover{
         img{
-            transform:scale(1.065);
+            transform: scale3d(1.05, 1.05, 1);
         }
     }
 }
