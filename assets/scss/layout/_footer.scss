@@ -59,9 +59,6 @@
         &:hover{
             background-position: 0 0;
         }
-        // &::selection{
-        //     @include hover-effect;
-        // }
     }
     &__bottom-right{
         display: flex;
@@ -72,6 +69,13 @@
         @include breakpoint-md{
             gap:rem(32);
             flex-wrap: nowrap;
+        }
+    }
+    &__link-title{
+        font-size: rem(22);
+        margin-bottom: rem(8);
+        @include breakpoint-sm{
+            font-size: rem(24);
         }
     }
 }
@@ -89,15 +93,21 @@
 .socials-list {
     list-style: none;
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap:0.75rem;
+    @include breakpoint-sm{
+        flex-wrap: nowrap;
+    }
     @include breakpoint-xl{
         margin-left: 0;
         justify-content: flex-end;
     }
     &--mobile{
+        flex-wrap: wrap;
         .socials-link{
             background: $clr-secondary;
-            transition:all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+            transition:all 0.3s cubic-bezier(0.76, 0, 0.24, 1);         
             &:hover{
                 cursor: pointer;
                 background: $clr-white;
@@ -213,6 +223,7 @@
         justify-content: space-between;
     }
 }
+
 .designed-by-text{
     display: flex;
     align-items: center;

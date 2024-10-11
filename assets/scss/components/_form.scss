@@ -135,9 +135,8 @@ select {
 
 .cta-link{
     display:inline-flex;
-    align-items: center;
+    // align-items: center;
     gap:rem(12);
-    // font-size: clamp(1.25rem, 4vw + 1rem, 1.75rem);
     font-size: rem(22);
     line-height: 1.28;
     font-family: $ff-primary;
@@ -178,7 +177,6 @@ select {
     @include breakpoint-xxl{
         gap:rem(36);
     }
-
     &:hover{
         background-position: 0 0;
         svg{
@@ -189,9 +187,16 @@ select {
     }
 }
 
+.cta-item{
+    &--address{
+        @extend .cta-link;
+    }
+}
+
 .cta-address {
     color:$clr-white;
 }
+
 
 .form-label{
     color:$clr-white;

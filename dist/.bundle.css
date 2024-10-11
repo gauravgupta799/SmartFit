@@ -13573,9 +13573,8 @@ select {
   }
 }
 
-.cta-link {
+.cta-link, .cta-item--address {
   display: inline-flex;
-  align-items: center;
   gap: 0.75rem;
   font-size: 1.375rem;
   line-height: 1.28;
@@ -13589,65 +13588,65 @@ select {
   background-size: 100% 200%;
   transition: background-position 0.3s ease;
 }
-.cta-link svg {
+.cta-link svg, .cta-item--address svg {
   width: 1.25rem;
   height: 1.25rem;
 }
 @media only screen and (min-width: 36em) {
-  .cta-link svg {
+  .cta-link svg, .cta-item--address svg {
     width: 1.5rem;
     height: 1.5rem;
   }
 }
 @media only screen and (min-width: 48em) {
-  .cta-link svg {
+  .cta-link svg, .cta-item--address svg {
     width: 1.75rem;
     height: 1.75rem;
   }
 }
 @media only screen and (min-width: 62em) {
-  .cta-link svg {
+  .cta-link svg, .cta-item--address svg {
     width: 2rem;
     height: 2rem;
   }
 }
 @media only screen and (min-width: 75em) {
-  .cta-link svg {
+  .cta-link svg, .cta-item--address svg {
     width: 2.25rem;
     height: 2.25rem;
   }
 }
-.cta-link svg path {
+.cta-link svg path, .cta-item--address svg path {
   fill: #ffffff;
   transition: fill 0.3s ease;
 }
 @media only screen and (min-width: 36em) {
-  .cta-link {
+  .cta-link, .cta-item--address {
     font-size: 1.5rem;
     gap: 1.125rem;
   }
 }
 @media only screen and (min-width: 48em) {
-  .cta-link {
+  .cta-link, .cta-item--address {
     font-size: 1.625rem;
     gap: 1.5rem;
   }
 }
 @media only screen and (min-width: 75em) {
-  .cta-link {
+  .cta-link, .cta-item--address {
     font-size: 1.75rem;
     gap: 1.75rem;
   }
 }
 @media only screen and (min-width: 100em) {
-  .cta-link {
+  .cta-link, .cta-item--address {
     gap: 2.25rem;
   }
 }
-.cta-link:hover {
+.cta-link:hover, .cta-item--address:hover {
   background-position: 0 0;
 }
-.cta-link:hover svg path {
+.cta-link:hover svg path, .cta-item--address:hover svg path {
   fill: #f58022;
 }
 
@@ -15105,6 +15104,15 @@ select {
     flex-wrap: nowrap;
   }
 }
+.footer__link-title {
+  font-size: 1.375rem;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (min-width: 36em) {
+  .footer__link-title {
+    font-size: 1.5rem;
+  }
+}
 
 .footer-logo {
   height: 5rem;
@@ -15123,13 +15131,23 @@ select {
 .socials-list {
   list-style: none;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
+}
+@media only screen and (min-width: 36em) {
+  .socials-list {
+    flex-wrap: nowrap;
+  }
 }
 @media only screen and (min-width: 75em) {
   .socials-list {
     margin-left: 0;
     justify-content: flex-end;
   }
+}
+.socials-list--mobile {
+  flex-wrap: wrap;
 }
 .socials-list--mobile .socials-link {
   background: #f58022;
